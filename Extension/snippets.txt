@@ -1,0 +1,11 @@
+<label>Email:</label>
+<input type="text" id="email">
+<label>Password:</label>
+<input type="password" id="pass">
+
+-
+
+Note that the script must be referenced in the same part in which the
+element lives.
+
+-
