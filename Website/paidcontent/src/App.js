@@ -3,24 +3,47 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [on, setOn] = useState(false);
   const [data, setData] = useState("");
   const [ready, setReady] = useState(false);
+  const [type, setType] = useState("");
+  const [input, setInput] = useState("");
+  const [request, setRequest] = useState({});
 
-  async function get() {
-    console.log("Fetch has been called");
-    await fetch("https://aiserver.herokuapp.com/dev_test", "GET")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        const dataJSON = JSON.stringify(data);
-        setData(dataJSON);
-        setReady(true);
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  };
+
+  async function submitClick() {
+    if (type) {
+      if (input) {
+        const requestBuild = {
+          type: type,
+          input: input
+        };
+        setRequest(requestBuild);
+        console.log(JSON.stringify(request));
+      } else {
+        console.log("error: no input selected");
+      };
+    } else {
+      console.log("error: no type selected");
+    };
+
+    if (request) {
+      await fetch("https://aiserver.herokuapp.com/dev_req", {
+        body: JSON.stringify(request)
       })
-      .catch((err) => {
-        console.log({ message: err.message })
-    });
-  }
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data);
+          setReady(true);
+        })
+        .catch((err) => {
+          console.log({ message: err.message })
+        })
+    }
+  };
+
   return (
     <div className="App">
       <div className='titleSection'>
@@ -32,10 +55,20 @@ function App() {
         <h4 className='formatTitle'>
           Is this a formula for excel or sheets?
         </h4>
-        <button className='excelButton'>
+        <button 
+          className='excelButton'
+          onClick={() => {
+            setType("Excel");
+          }}
+          >
           Excel
         </button>
-        <button className='sheetsButton'>
+        <button 
+          className='sheetsButton'
+          onClick={() => {
+            setType("Sheets");
+          }}
+          >
           Sheets
         </button>
       </div>
@@ -49,14 +82,15 @@ function App() {
           rows='4'
           cols='50'
           className='mainInput'
+          onChange={handleInputChange}
         />
       </div>
       <div className='submitButtonDiv'>
         <button 
           className='submitButton'
           onClick={() => {
-            get();
-            setOn(!on);
+            setReady(false);
+            submitClick();
           }}
           >
           Submit
@@ -68,10 +102,11 @@ function App() {
         </h3>
         <textarea 
           type="text" 
-          placeholder={ ready ?  data.message : "Nothing yet..."}
+          placeholder={ ready ?  data.text : "Nothing yet..."}
           rows='4'
           cols='50'
           className='mainOutput'
+          readOnly
           />
       </div>
       <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'/>
