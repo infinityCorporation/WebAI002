@@ -7,40 +7,44 @@ function App() {
   const [ready, setReady] = useState(false);
   const [type, setType] = useState("");
   const [input, setInput] = useState("");
-  const [request, setRequest] = useState({});
+  const [request, setRequest] = useState();
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
 
-  async function submitClick() {
-    if (type) {
-      if (input) {
-        const requestBuild = {
-          type: type,
-          input: input
-        };
-        setRequest(requestBuild);
-        console.log(JSON.stringify(request));
-      } else {
-        console.log("error: no input selected");
-      };
-    } else {
-      console.log("error: no type selected");
-    };
+  const handleBuild = () => {
+    console.log(type + " " + input);
+    setRequest({
+      type: type,
+      input: input
+    });
+    console.log(request);
+  };
 
-    if (request) {
+  async function fetchCall() {
+    setData("");
+    if ( request != undefined ) {
       await fetch("https://aiserver.herokuapp.com/dev_req", {
-        body: JSON.stringify(request)
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setData(data);
-          setReady(true);
-        })
-        .catch((err) => {
-          console.log({ message: err.message })
-        })
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(request)
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Actual data from the request");
+              console.log(data);
+              console.log(JSON.stringify(data));
+              setData(data);
+              setReady(true);
+            })
+            .catch((err) => {
+              console.log({ message: err.message })
+            });
+    } else {
+      console.log("error: request does not exist");
     }
   };
 
@@ -89,8 +93,8 @@ function App() {
         <button 
           className='submitButton'
           onClick={() => {
-            setReady(false);
-            submitClick();
+            handleBuild();
+            fetchCall();
           }}
           >
           Submit

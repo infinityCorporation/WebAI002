@@ -41,6 +41,8 @@ To-Do:
    - Slogans
  - Pricing tiers
  - Full features concept list
+ - Update frontend and paidend readme.md documents
+ - Test Api failure points
  
 Necessary Components:
  - Backend:
