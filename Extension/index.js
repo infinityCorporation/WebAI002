@@ -1,4 +1,4 @@
-var button = document.getElementById("startButton")
+var button = document.getElementById("startButton");
 
 if (button) {
     button.addEventListener("click", () => {
