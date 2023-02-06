@@ -4,7 +4,23 @@ import './App.css';
 
 function App() {
   const [on, setOn] = useState(false);
+  const [data, setData] = useState("");
+  const [ready, setReady] = useState(false);
 
+  async function get() {
+    console.log("Fetch has been called");
+    await fetch("https://aiserver.herokuapp.com/dev_test", "GET")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const dataJSON = JSON.stringify(data);
+        setData(dataJSON);
+        setReady(true);
+      })
+      .catch((err) => {
+        console.log({ message: err.message })
+    });
+  }
   return (
     <div className="App">
       <div className='titleSection'>
@@ -39,6 +55,7 @@ function App() {
         <button 
           className='submitButton'
           onClick={() => {
+            get();
             setOn(!on);
           }}
           >
@@ -51,7 +68,7 @@ function App() {
         </h3>
         <textarea 
           type="text" 
-          placeholder={ on ? "Nothing yet..." : "You clicked the button."}
+          placeholder={ ready ?  data.message : "Nothing yet..."}
           rows='4'
           cols='50'
           className='mainOutput'
