@@ -31,6 +31,17 @@ Description: The majority of the app will be built in react, javascript, html + 
              The sites that will need to be used are, of course, openAI, Heroku, A domain hosting
              site, Firebase, and possibly a database hosted with either mongoDB or another platform.
              
+To-Do: 
+ - A name needs to be chosen and some domain names found.
+ - A color scheme needs to be chosen
+ - Basic advertising concepts
+   - Visuals
+   - Where will it be promoted
+   - Socials
+   - Slogans
+ - Pricing tiers
+ - Full features concept list
+ 
 Necessary Components:
  - Backend:
     - OpenAI API connection with authorization and payment

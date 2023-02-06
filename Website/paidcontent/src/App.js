@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [on, setOn] = useState(false);
+
   return (
     <div className="App">
       <div className='titleSection'>
@@ -33,7 +36,12 @@ function App() {
         />
       </div>
       <div className='submitButtonDiv'>
-        <button className='submitButton'>
+        <button 
+          className='submitButton'
+          onClick={() => {
+            setOn(!on);
+          }}
+          >
           Submit
         </button>
       </div>
@@ -43,7 +51,7 @@ function App() {
         </h3>
         <textarea 
           type="text" 
-          placeholder="Your formula will appear here!" 
+          placeholder={ on ? "Nothing yet..." : "You clicked the button."}
           rows='4'
           cols='50'
           className='mainOutput'
