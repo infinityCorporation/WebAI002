@@ -1,0 +1,45 @@
+1. Array Assistant Formula Generator
+
+1.0 Intro:
+The Formula Generator is a tool that allows you to create a formula
+simply by describing what you need said formula to do. It takes written
+commands and turns them into ready-to-use formulas that can be copy and
+pasted into the spreadsheet of your choice!
+
+1.1 Basics:
+    a. Services - The output will depend on which service you are using. There
+                  are two major spreadsheet services, Microsoft Excel and google
+                  Sheets, and you should identify which one you are using. Once 
+                  you have done so, simply click the button that matches you service.
+                  These buttons can be found above the input area and are labelled 
+                  accordingly,
+    b. Input - The input is important as it is what your formula will be generated
+               from. You simply want to tell it what it is creating a formula to do,
+               and nothing more. Do not use any normal grammar, and do not form 
+               complete sentences. Describe your variables how you need them and be 
+               concise and to the point. 
+               For example, if I wanted to calculate 'A' plus 'B', I would input the
+               phrase "calculate A plus B". This would give the desired result. For 
+               more information, see section 1.8 Examples. 
+    c. Output - The output section is where your result will appear. It will only 
+                output the formula, beginning with the '=' character. This section allows
+                for you to simply copy and paste the formula from the generator into
+                the spreadsheet that you are currently creating.
+
+1.2 Examples:
+To provide some context for what a good prompt will look like, below are some example
+prompts and the respective outputs that they will return. 
+    a.
+    b.
+    c.
+
+1.3 Help:
+If you have experienced a quick issue, there are a few things that you can
+do to resolve the issue. 
+    a. First, try refreshing the page. This often fixes a lot of browser specific issues
+       and, as our product is still in Beta, we have not tested on each and every browser.
+       Remeber, if you have types out a long prompt, copy your prompt so that you can paste
+       it right back into the input once the page refreshes!
+    b. If issues still persist, feel free to contact us at [INSERT CONTACT EMAIL HERE]! We 
+       normally respond to issues within 1-2 business days. 
+
