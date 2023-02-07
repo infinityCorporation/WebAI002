@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+//import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../auth/firebase.js'
 import './Account.css';
 
@@ -23,11 +24,11 @@ export default function Account() {
             .then((userCredential) => {
                 const user = userCredential.user;
                 setUser(user);
-                console.log(user);
             })
             .catch((err) => {
                 console.log({ message: err.message });
             });
+        console.log(user);
     }
 
     return(
