@@ -16,7 +16,7 @@ export default function Layout() {
                         <Link 
                             to="/"
                             className='home'
-                            >
+                        >
                                 <h3 className='homeTitle'>
                                     Home
                                 </h3>
@@ -26,7 +26,7 @@ export default function Layout() {
                         <Link 
                             to="/formulaGen"
                             className='formGen'
-                            >
+                        >
                                 <h3 className='formGenTitle'>
                                     Formula Generator
                                 </h3>
@@ -36,7 +36,7 @@ export default function Layout() {
                         <Link 
                             to="/formulaExp"
                             className='formExp'
-                            >
+                        >
                                 <h3 className='formExpTitle'>
                                     Formula Explainer
                                 </h3>
@@ -46,7 +46,7 @@ export default function Layout() {
                         <Link 
                             to="/extensions"
                             className='ext'
-                            >
+                        >
                                 <h3 className='extTitle'>
                                     Extensions
                                 </h3>
@@ -56,7 +56,7 @@ export default function Layout() {
                         <Link 
                             to="/pricing"
                             className='pricing'
-                            >
+                        >
                                 <h3 className='pricingTitle'>
                                     Pricing
                                 </h3>
@@ -66,7 +66,7 @@ export default function Layout() {
                         <Link 
                             to="/docs"
                             className='docs'
-                            >
+                        >
                                 <h3 className='docsTitle'>
                                     Docs
                                 </h3>
@@ -74,9 +74,14 @@ export default function Layout() {
                     </li>
                 </ul>
                 <div className='accountSpace'>
-                    <h3 className='username'>
-                        User Account
-                    </h3>
+                    <Link
+                        to="/account"
+                        className='account'
+                    >
+                        <h3 className='username'>
+                            User Account
+                        </h3>
+                    </Link>
                 </div>
             </nav>
 

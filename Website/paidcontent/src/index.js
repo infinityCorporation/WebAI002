@@ -10,6 +10,7 @@ import FormulaGen from './pages/formulaGen';
 import Extensions from './pages/Extensions';
 import Pricing from './pages/Pricing';
 import Docs from './pages/Docs';
+import Account from './pages/Account';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -23,6 +24,7 @@ root.render(
           <Route path="/extensions" element={<Extensions />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/docs" element={<Docs />} />
+          <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
     </BrowserRouter>
