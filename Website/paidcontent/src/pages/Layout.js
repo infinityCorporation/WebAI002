@@ -54,6 +54,16 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link 
+                            to="/pricing"
+                            className='pricing'
+                            >
+                                <h3 className='pricingTitle'>
+                                    Pricing
+                                </h3>
+                            </Link>
+                    </li>
+                    <li>
+                        <Link 
                             to="/docs"
                             className='docs'
                             >
