@@ -4,108 +4,115 @@
   background-color: #F5F5F5;
   height: 100vh;
   width: 100%;
-  top: -10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   font-family: 'Roboto Mono';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav{
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  font-family: 'Roboto Mono';
+  border-right-width: 2px;
+  border-right-color: black;
+  border-right-style: inset;
+  background-color: white;
 }
 
-.titleSection {
-  height: 100px;
+.navTop {
+  justify-content: center;
+  text-align: left;
+  font-family: 'Roboto Mono';
   width: 100%;
+  height: 80px;
   position: relative;
-  top: 50px;
+  top: -20px;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.headerTop {
+  position: relative;
+  top: 20px;
+  left: 15px;
+  font-family: 'Roboto Mono';
+}
+
+.list {
+  position: relative;
+}
+
+.formGen {
+  font-family: 'Roboto Mono';
+  text-align: left;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  top: -20px;
+  border-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #3C3C3C;
+  border-bottom-style: solid;
+  background-color: white;
+}
+
+.formGenTitle {
+  position: relative;
+  left: 15px;
+  font-family: 'Roboto Mono';
+  color: #3C3C3C;
+}
+
+.formExp {
+  font-family: 'Roboto Mono';
+  text-align: left;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  top: -20px;
+  border-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #3C3C3C;
+  border-bottom-style: solid;
+  background-color: white;
+}
+
+.formExpTitle {
+  position: relative;
+  left: 15px;
+  font-family: 'Roboto Mono';
+  color: #3C3C3C;
+}
+
+.accountSpace {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-top-color: black;
+  border-top-width: 2px;
+  border-top-style: solid;
   justify-content: center;
 }
 
-.mainTitle {
-  font-family: 'Roboto Mono';
-}
-
-.buttonSection {
-  align-items: left;
+.username {
   position: relative;
-  top: 15px;
-}
-
-.formatTitle {
+  left: 15px;
+  top: 10px;
   font-family: 'Roboto Mono';
 }
 
-.excelButton {
-  width: 125px;
-  height: 50px;
-  border-radius: 6px;
-  border-width: 3px;
-  border-color: black;
-  background-color: white;
-  font-family: 'Roboto Mono';
-  font-size: 19px;
-  margin-right: 5px;
+.main {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 20%;
+  background-color: transparent;
 }
-
-.sheetsButton {
-  width: 125px;
-  height: 50px;
-  border-radius: 6px;
-  border-width: 3px;
-  border-color: black;
-  background-color: white;
-  font-family: 'Roboto Mono';
-  font-size: 19px;
-  margin-left: 5px;
-}
-
-.inputSection {
-  position: relative;
-  top: 30px;
-}
-
-.inputLabel {}
-
-.mainInput {
-  height: 125px;
-  width: 400px;
-  font-family: 'Roboto Mono';
-  font-size: 17px;
-  border-width: 2px;
-  border-radius: 4px;
-  border-color: black;
-}
-
-.submitButtonDiv {
-  position: relative;
-  top: 30px;
-}
-
-.submitButton {
-  width: 300px;
-  height: 40px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: black;
-  background-color: white;
-  font-family: 'Roboto Mono';
-  font-size: 18px;
-}
-
-.outputSection {
-  position: relative;
-  top: 45px;
-}
-
-.outputLabel {}
-
-.mainOutput {
-  height: 125px;
-  width: 400px;
-  font-family: 'Roboto Mono';
-  font-size: 17px;
-  border-width: 2px;
-  border-radius: 4px;
-  border-color: black;
-}
-

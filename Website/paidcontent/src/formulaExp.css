@@ -1,4 +1,4 @@
-.forumlaGen {
+.formulaExp {
     text-align: center;
     align-items: center;
     background-color: #F5F5F5;
@@ -36,43 +36,6 @@
     border-bottom-width: 2px;
     width: 30%;
     font-family: 'Roboto Mono';
-  }
-  
-  .buttonSection {
-    align-items: left;
-    position: relative;
-  }
-  
-  .formatTitle {
-    font-family: 'Roboto Mono';
-    color: #3C3C3C;
-  }
-  
-  .excelButton {
-    width: 125px;
-    height: 50px;
-    position: relative;
-    top: -10px;
-    border-radius: 6px;
-    border-width: 2px;
-    border-color: black;
-    background-color: white;
-    font-family: 'Roboto Mono';
-    font-size: 19px;
-  }
-  
-  .sheetsButton {
-    width: 125px;
-    height: 50px;
-    position: relative;
-    top: -10px;
-    border-radius: 6px;
-    border-width: 2px;
-    border-color: black;
-    background-color: white;
-    font-family: 'Roboto Mono';
-    font-size: 19px;
-    margin-left: 5px;
   }
   
   .inputSection {

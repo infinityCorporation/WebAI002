@@ -43,6 +43,10 @@ To-Do:
  - Full features concept list
  - Update frontend and paidend readme.md documents
  - Test Api failure points
+ - Create sellable spreadsheet templates (Excel and Sheets)
+   - Exportable and fillable files complete with equations
+   - Changable styles for corporate needs
+   - Common templates (ex: accounting, invoicing, etc.)
  
 Necessary Components:
  - Backend:
