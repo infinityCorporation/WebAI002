@@ -94,10 +94,52 @@ background-color: white;
 }
 
 .formExpTitle {
-position: relative;
-left: 15px;
-font-family: 'Roboto Mono';
-color: #3C3C3C;
+    position: relative;
+    left: 15px;
+    font-family: 'Roboto Mono';
+    color: #3C3C3C;
+}
+
+.ext {
+    font-family: 'Roboto Mono';
+    text-align: left;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: -20px;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-color: #3C3C3C;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+.extTitle {
+    position: relative;
+    left: 15px;
+    font-family: 'Roboto Mono';
+    color: #3C3C3C;
+}
+
+.docs {
+    font-family: 'Roboto Mono';
+    text-align: left;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: -20px;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-color: #3C3C3C;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+.docsTitle {
+    position: relative;
+    left: 15px;
+    font-family: 'Roboto Mono';
+    color: #3C3C3C;
 }
 
 .accountSpace {

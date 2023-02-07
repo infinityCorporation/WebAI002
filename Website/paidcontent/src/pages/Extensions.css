@@ -1,0 +1,11 @@
+.main {
+    background-color: #F5F5F5;
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    top: 0px;
+    left: 20%;
+    margin-left: 2px;
+    font-family: 'Roboto Mono';
+    text-align: center;
+  }

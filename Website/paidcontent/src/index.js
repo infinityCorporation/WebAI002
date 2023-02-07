@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Layout from './pages/Layout';
 import FormulaExp from './pages/formulaExp';
 import FormulaGen from './pages/formulaGen';
+import Extensions from './pages/Extensions';
+import Docs from './pages/Docs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,6 +19,8 @@ root.render(
           <Route index element={<Home />} />
           <Route path="/formulaGen" element={<FormulaGen />} />
           <Route path="/formulaExp" element={<FormulaExp />} />
+          <Route path="/extensions" element={<Extensions />} />
+          <Route path="/docs" element={<Docs />} />
         </Route>
       </Routes>
     </BrowserRouter>

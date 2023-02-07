@@ -42,6 +42,26 @@ export default function Layout() {
                                 </h3>
                             </Link>
                     </li>
+                    <li>
+                        <Link 
+                            to="/extensions"
+                            className='ext'
+                            >
+                                <h3 className='extTitle'>
+                                    Extensions
+                                </h3>
+                            </Link>
+                    </li>
+                    <li>
+                        <Link 
+                            to="/docs"
+                            className='docs'
+                            >
+                                <h3 className='docsTitle'>
+                                    Docs
+                                </h3>
+                            </Link>
+                    </li>
                 </ul>
                 <div className='accountSpace'>
                     <h3 className='username'>

@@ -57,6 +57,11 @@ To-Do:
    - Chrome Add-On Link
    - Pricing tiers
    - Docs (Guides of how to use the products, how to install extensions, etc.)
+ - Write Docs for;
+   - On site pages (Formula gen, exp, etc.)
+   - Extensions (Installation, Usage, etc.)
+   - Issues (How to fix, Who to contact)
+   - Account (How to use, upgrade/downgrade, unsubscribe, etc.)
  
 Necessary Components:
  - Backend:

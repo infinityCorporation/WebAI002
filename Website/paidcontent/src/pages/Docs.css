@@ -1,0 +1,50 @@
+.main {
+    background-color: #F5F5F5;
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    top: 0px;
+    left: 20%;
+    margin-left: 2px;
+    font-family: 'Roboto Mono';
+    text-align: center;
+}
+
+.fgDiv {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    text-align: left;
+    align-items: left;
+}
+
+.introTitle {
+    height: 25px;
+    width: 100%;
+}
+
+.introMain {
+    align-self: left;
+    position: relative;
+    top: 0px;
+}
+
+.basicsTitle {
+    height: 25px;
+    width: 100%;
+}
+
+.basicsa {
+    position: relative;
+    top: 0px;
+}
+
+.basicsb {
+    position: relative;
+    top: 0px;
+}
+
+.basicsc {
+    position: relative;
+    top: 0px;
+}
