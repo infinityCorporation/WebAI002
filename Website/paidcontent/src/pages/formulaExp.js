@@ -5,17 +5,17 @@ import './formulaExp.css';
 export default function FormulaExp() {
     const [data, setData] = useState("");
     const [ready, setReady] = useState(false);
-    const [input, setInput] = useState("");
+    const [equation, setEquation] = useState("");
     const [request, setRequest] = useState();
   
     const handleInputChange = (event) => {
-      setInput(event.target.value);
+      setEquation(event.target.value);
     };
   
     const handleBuild = () => {
-      console.log(input);
+      console.log(equation);
       setRequest({
-        input: input
+        equation: equation
       });
       console.log(request);
     };
@@ -47,7 +47,7 @@ export default function FormulaExp() {
     };
   
     return (
-      <div className="App">
+      <div className="formulaMain">
         <div className='mainContainer'>
             <div className='titleSection'>
                 <h2 className='mainTitle'>

@@ -1,0 +1,97 @@
+
+.formulaMain {
+  align-items: left;
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  left: 20%;
+  top: 0px;
+  margin-left: 2px;
+  background-color: #F5F5F5;
+}
+
+.mainContainer {
+  align-items: left;
+  text-align: left;
+  width: 95%;
+  position: absolute;
+  left: 5%;
+  font-family: 'Roboto Mono';
+}
+
+.titleSection {
+  height: 80px;
+  width: 100%;
+  position: relative;
+  top: 20px;
+  justify-content: center;
+}
+
+.mainTitle {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  width: 30%;
+  font-family: 'Roboto Mono';
+}
+
+.inputSection {
+  position: relative;
+  top: 0px;
+}
+
+.inputLabel {
+  color: #3C3C3C;
+}
+
+.mainInput {
+  height: 125px;
+  width: 400px;
+  position: relative;
+  top: -10px;
+  font-family: 'Roboto Mono';
+  font-size: 17px;
+  border-width: 2px;
+  border-radius: 4px;
+  border-color: black;
+}
+
+.submitButtonDiv {
+  position: relative;
+  top: 30px;
+}
+
+.submitButton {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  background-color: white;
+  font-family: 'Roboto Mono';
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+}
+
+.outputSection {
+  position: relative;
+  top: 45px;
+}
+
+.outputLabel {
+  color: #3C3C3C;
+}
+
+.mainOutput {
+  height: 125px;
+  width: 400px;
+  justify-content: top;
+  font-family: 'Roboto Mono';
+  font-size: 17px;
+  border-width: 2px;
+  border-radius: 4px;
+  border-color: black;
+  position: relative;
+  top: -10px;
+}

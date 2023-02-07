@@ -1,0 +1,120 @@
+.nav {
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    font-family: 'Roboto Mono';
+    border-right-width: 2px;
+    border-right-color: black;
+    border-right-style: inset;
+    background-color: white;
+    margin-right: 2px;
+}
+  
+.navTop {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    width: 100%;
+    height: 80px;
+    position: relative;
+    top: -20px;
+    background-color: #2FBF71;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+
+.headerTop {
+    position: relative;
+    top: 20px;
+    font-family: 'Roboto Mono';
+}
+
+.list {
+position: relative;
+list-style: none;
+}
+
+.home {
+    font-family: 'Roboto Mono';
+    text-align: left;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: -20px;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-color: #3C3C3C;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+.homeTitle {
+    position: relative;
+    left: 15px;
+    font-family: 'Roboto Mono';
+    color: #3C3C3C;
+}
+
+.formGen {
+font-family: 'Roboto Mono';
+text-align: left;
+width: 100%;
+height: 60px;
+position: relative;
+top: -20px;
+border-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #3C3C3C;
+border-bottom-style: solid;
+background-color: white;
+}
+
+.formGenTitle {
+position: relative;
+left: 15px;
+font-family: 'Roboto Mono';
+color: #3C3C3C;
+}
+
+.formExp {
+font-family: 'Roboto Mono';
+text-align: left;
+width: 100%;
+height: 60px;
+position: relative;
+top: -20px;
+border-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #3C3C3C;
+border-bottom-style: solid;
+background-color: white;
+}
+
+.formExpTitle {
+position: relative;
+left: 15px;
+font-family: 'Roboto Mono';
+color: #3C3C3C;
+}
+
+.accountSpace {
+height: 80px;
+width: 100%;
+position: absolute;
+bottom: 0px;
+left: 0px;
+border-top-color: black;
+border-top-width: 2px;
+border-top-style: solid;
+justify-content: center;
+}
+
+.username {
+position: relative;
+left: 15px;
+top: 10px;
+font-family: 'Roboto Mono';
+}

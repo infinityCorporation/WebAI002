@@ -9,16 +9,6 @@ export default function FormulaGen() {
     const [input, setInput] = useState("");
     const [request, setRequest] = useState();
   
-    function highlight() {
-      if (type === 'Excel') {
-        document.getElementsByClassName('excelButton').style.background_color = 'lightgrey';
-      } else if (type === 'Sheets') {
-        document.getElementsByClassName('sheetsButton').style.background_color = 'lightgrey';
-      } else {
-        console.log("nothing selected");
-      }
-    };
-  
     const handleInputChange = (event) => {
       setInput(event.target.value);
     };
@@ -59,7 +49,7 @@ export default function FormulaGen() {
     };
   
     return (
-      <div className="App">
+      <div className="formulaMain">
         <div className='mainContainer'>
             <div className='titleSection'>
             <h2 className='mainTitle'>
@@ -74,7 +64,6 @@ export default function FormulaGen() {
                 className='excelButton'
                 onClick={() => {
                 setType("Excel");
-                highlight();
                 }}
                 >
                 Excel
@@ -83,7 +72,6 @@ export default function FormulaGen() {
                 className='sheetsButton'
                 onClick={() => {
                 setType("Sheets");
-                highlight();
                 }}
                 >
                 Sheets
