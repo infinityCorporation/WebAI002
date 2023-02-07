@@ -1,12 +1,4 @@
-.Home {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  font-family: 'Roboto Mono';
-}
-
 .app {
-  text-align: center;
   background-color: #F5F5F5;
   height: 100%;
   width: 80%;
@@ -15,23 +7,28 @@
   left: 20%;
   margin-left: 2px;
   font-family: 'Roboto Mono';
+  text-align: center;
 }
 
-.titleSection {
+.titleArea {
   text-align: center;
   justify-content: baseline;
-  
+  width: 50%;
+  height: 6%;
+  position: relative;
+  left: 25%;
+  top: 50px;
+  border-bottom: 2px solid black;
 }
 
 .title {
   text-align: center;
 }
 
-.main {
-  width: 80%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 20%;
-  background-color: transparent;
+.intro {
+  width: 70%;
+  height: 10%;
+  position: relative;
+  left: 15%;
+  top: 50px;
 }

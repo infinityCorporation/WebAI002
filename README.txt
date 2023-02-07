@@ -47,6 +47,16 @@ To-Do:
    - Exportable and fillable files complete with equations
    - Changable styles for corporate needs
    - Common templates (ex: accounting, invoicing, etc.)
+ - Change button outlilne color (without shading)
+ - Complete Full Beta Router Fucntionality
+   - Home
+   - Profile
+   - Formula Generator
+   - Formula Explainer
+   - Data Cleaning
+   - Chrome Add-On Link
+   - Pricing tiers
+   - Docs (Guides of how to use the products, how to install extensions, etc.)
  
 Necessary Components:
  - Backend:
