@@ -97,13 +97,26 @@
   top: 30px;
 }
 
-.submitButton {
+.submitButton:before {
   width: 300px;
   height: 40px;
   border-radius: 5px;
   border-width: 2px;
   border-color: black;
   background-color: white;
+  font-family: 'Roboto Mono';
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+}
+
+.submitButton:active {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  background-color: #D6D6D6;
   font-family: 'Roboto Mono';
   font-size: 18px;
   position: relative;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './formulaGen.css';
 
 export default function FormulaGen() {
@@ -8,22 +8,41 @@ export default function FormulaGen() {
     const [type, setType] = useState("");
     const [input, setInput] = useState("");
     const [request, setRequest] = useState();
-  
-    const handleInputChange = (event) => {
+    const [excelToggle, setExcelToggle] = useState(false);
+    const [sheetsToggle, setSheetsToggle] = useState(false);
+
+    const handleInputChange = useCallback((event) => {
       setInput(event.target.value);
-    };
-  
-    const handleBuild = () => {
-      console.log(type + " " + input);
+      setRequest({
+        type: type,
+        input: event.target.value
+      });
+    });
+
+    const handleExcelClick = useCallback(() => {
+      setExcelToggle(!excelToggle);
+      setSheetsToggle(false);
       setRequest({
         type: type,
         input: input
       });
-      console.log(request);
-    };
+    });
+
+    const handleSheetsClick = useCallback(() => {
+      setSheetsToggle(!sheetsToggle);
+      setExcelToggle(false);
+      setRequest({
+        type: type,
+        input: input
+      });
+    });
   
-    async function fetchCall() {
+    const fetchCall = useCallback(async () => {
       setData("");
+      setRequest({
+        type: type,
+        input: input
+      });
       if ( request !== undefined ) {
         await fetch("https://aiserver.herokuapp.com/dev_aigen", {
               method: 'POST',
@@ -46,7 +65,7 @@ export default function FormulaGen() {
       } else {
         console.log("error: request does not exist");
       }
-    };
+    });
   
     return (
       <div className="formulaMain">
@@ -63,7 +82,13 @@ export default function FormulaGen() {
             <button 
                 className='excelButton'
                 onClick={() => {
-                setType("Excel");
+                  setType("Excel");
+                  handleExcelClick();
+                }}
+                style={{ 
+                  backgroundColor: excelToggle ? '#2e86ab' : 'white',
+                  color: excelToggle ? "white" : "black",
+                  border: excelToggle ? '2px solid #2e86ab' : '2px solid black'
                 }}
                 >
                 Excel
@@ -71,7 +96,13 @@ export default function FormulaGen() {
             <button 
                 className='sheetsButton'
                 onClick={() => {
-                setType("Sheets");
+                  handleSheetsClick();
+                  setType("Sheets");
+                }}
+                style={{
+                  backgroundColor: sheetsToggle ? '#2e86ab' : 'white',
+                  color: sheetsToggle ? "white" : "black",
+                  border: sheetsToggle ? '2px solid #2e86ab' : ' 2px solid black'
                 }}
                 >
                 Sheets
@@ -95,7 +126,6 @@ export default function FormulaGen() {
                 className='submitButton'
                 onClick={() => {
                 setReady(false);
-                handleBuild();
                 fetchCall();
                 }}
                 >
@@ -109,7 +139,7 @@ export default function FormulaGen() {
             <textarea 
                 type="text" 
                 placeholder='Input something above!'
-                value={ ready ?  data.choices[0].text : null }
+                value={ ready ?  data.choices[0].text : null}
                 rows='4'
                 cols='50'
                 className='mainOutput'

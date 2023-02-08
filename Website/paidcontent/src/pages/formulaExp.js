@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './formulaExp.css';
 
 export default function FormulaExp() {
@@ -10,17 +10,12 @@ export default function FormulaExp() {
   
     const handleInputChange = (event) => {
       setEquation(event.target.value);
-    };
-  
-    const handleBuild = () => {
-      console.log(equation);
       setRequest({
-        equation: equation
+        equation: event.target.value
       });
-      console.log(request);
     };
   
-    async function fetchCall() {
+    const fetchCall = useCallback(async () => {
       setData("");
       if ( request !== undefined ) {
         await fetch("https://aiserver.herokuapp.com/dev_aiexp", {
@@ -44,7 +39,7 @@ export default function FormulaExp() {
       } else {
         console.log("error: request does not exist");
       }
-    };
+    });
   
     return (
       <div className="formulaMain">
@@ -72,7 +67,6 @@ export default function FormulaExp() {
                     className='submitButton'
                     onClick={() => {
                     setReady(false);
-                    handleBuild();
                     fetchCall();
                     }}
                     >

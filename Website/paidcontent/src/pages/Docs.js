@@ -45,6 +45,20 @@ export default function Docs() {
                     the spreadsheet that you are currently creating.
                 </h4>
             </div>
+            <div className='feDiv'>
+                <h3 className='feTitle'>
+                    2.0 Formula Explainer:
+                </h3>
+                <h4 className='feMain'>
+                    The formula explainer tool allows you to have any formula, not just spreadsheet
+                    formulas, explained! Simply input the function or formula that you don't understand,
+                    and it will be explained in simple and concise terms. For more information on how
+                    to use, see the following sections.
+                </h4>
+                <h3 className='feBasics'>
+                    2.1 Basics
+                </h3>
+            </div>
         </div>
     )
 }

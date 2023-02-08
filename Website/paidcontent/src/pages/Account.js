@@ -11,6 +11,8 @@ export default function Account() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
   
+    let user;
+
     const handleEmail = (event) => {
         setEmail(event.target.value);
     }
@@ -19,9 +21,13 @@ export default function Account() {
         setPass(event.target.value);
     }
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
+    onAuthStateChanged(auth, (authed) => {
+        console.log(auth)
+        if (authed) {
+            user = authed;
+            return user;
         } else {
+            user = null;
         }
     })
 
@@ -40,6 +46,7 @@ export default function Account() {
     const signOutFunction = () => {
         signOut(auth)
             .then(() => {
+                auth.currentUser = null;
                 console.log("User has been signed out");
                 console.log(auth.currentUser)
             });
@@ -49,7 +56,7 @@ export default function Account() {
         <div className='main'>
             <div className='headerDiv'>
                 <h2 className='title'>
-                    User Account:
+                    Account
                 </h2>
             </div>
             { !auth.currentUser ? (
