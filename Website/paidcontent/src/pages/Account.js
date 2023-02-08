@@ -1,21 +1,27 @@
 import * as React from 'react';
 import { useState } from 'react';
 //import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../auth/firebase.js'
 import './Account.css';
 
+
+
 export default function Account() {
-    const [authenticated, setAuthenticated] = useState(false);
-    const [user, setUser] = useState();
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
+  
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+    }
+
+    const handlePass = (event) => {
+        setPass(event.target.value);
+    }
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            setAuthenticated(true);
         } else {
-            setAuthenticated(false);
         }
     })
 
@@ -23,13 +29,21 @@ export default function Account() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                setUser(user);
+                console.log(user)
+                return user;
             })
             .catch((err) => {
                 console.log({ message: err.message });
             });
-        console.log(user);
-    }
+    };
+
+    const signOutFunction = () => {
+        signOut(auth)
+            .then(() => {
+                console.log("User has been signed out");
+                console.log(auth.currentUser)
+            });
+    };
 
     return(
         <div className='main'>
@@ -38,7 +52,7 @@ export default function Account() {
                     User Account:
                 </h2>
             </div>
-            { !authenticated ? (
+            { !auth.currentUser ? (
                 <>
                     <div className='googleAuth'>
                         <h4 className='emailTitle'>
@@ -47,8 +61,7 @@ export default function Account() {
                         <input 
                             type="text" 
                             className='email'
-                            class='email'
-                            onChange={(text) => setEmail(text)}
+                            onChange={handleEmail}
                         />
                         <h4 className='passTitle'>
                             Password:
@@ -56,8 +69,8 @@ export default function Account() {
                         <input 
                             type="password" 
                             className='pass'
-                            class='pass'
-                            onChange={(text) => setPass(text)}
+                            value={pass}
+                            onChange={handlePass}
                         />
                     </div>
                     <button 
@@ -72,8 +85,17 @@ export default function Account() {
                 <>
                     <div className='signedIn'>
                         <h3 className='topPage'>
-                            User is Signed In
+                            <h3 className='email'>
+                                {auth.currentUser.email}
+                            </h3>
+                            <button 
+                                className='signout'
+                                onClick={() => signOutFunction()}
+                            >
+                                Sign Out
+                            </button>
                         </h3>
+                        
                     </div>
                 </>
             )}

@@ -1,11 +1,49 @@
 .main {
-    background-color: #F5F5F5;
-    height: 100%;
-    width: 80%;
-    position: fixed;
-    top: 0px;
-    left: 20%;
-    margin-left: 2px;
-    font-family: 'Roboto Mono';
-    text-align: center;
-  }
+  background-color: #F5F5F5;
+  height: 100%;
+  width: 80%;
+  position: fixed;
+  top: 0px;
+  left: 20%;
+  margin-left: 2px;
+  font-family: 'Roboto Mono';
+  text-align: center;
+}
+
+.extensionsDiv {
+  width: 90%;
+  position: relative;
+  left: 5%;
+  top: 10%;
+  text-align: left;
+}
+
+.chromeTitle {
+  width: 30%;
+  border-bottom: 2px solid black;
+}
+
+.chromeExt {
+  width: 100%;
+  background-color: grey;
+  justify-content: center;
+  height: 50px;
+}
+
+.excelSection {
+  width: 100%;
+  position: relative;
+  top: 40px;
+}
+
+.excelTitle {
+  width: 30%;
+  border-bottom: 2px solid black;
+}
+
+.excelExt {
+  width: 100%;
+  height: 50px;
+  background-color: grey;
+  justify-content: center;
+}

@@ -9,7 +9,7 @@ export default function Docs() {
             </h2>
             <div className='fgDiv'>
                 <h3 className='introTitle'>
-                    1.0 Intro:
+                    1.0 Formula Generator:
                 </h3>
                 <h4 className='introMain'>
                     The Formula Generator is a tool that allows you to create a formula
