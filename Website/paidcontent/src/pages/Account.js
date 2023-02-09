@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
-//import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { useState, useCallback, useReducer, useEffect } from 'react';
+import { signInWithEmailAndPassword, sendEmailVerification, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../auth/firebase.js'
 import './Account.css';
 
@@ -10,93 +9,202 @@ import './Account.css';
 export default function Account() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
-  
-    let user;
+    const [passCreate, setPassCreate] = useState("");
+    const [emailCreate, setEmailCreate] = useState("");
 
-    const handleEmail = (event) => {
-        setEmail(event.target.value);
-    }
-
-    const handlePass = (event) => {
-        setPass(event.target.value);
-    }
-
-    onAuthStateChanged(auth, (authed) => {
-        console.log(auth)
-        if (authed) {
-            user = authed;
-            return user;
-        } else {
-            user = null;
+    const [state, dispatch] = useReducer(
+        (prevState, action) => {
+            switch (action.type) {
+                case "SIGN_IN":
+                    return {
+                        ...prevState,
+                        userAuth: action.userObj,
+                        accCreate: action.create,
+                    };
+                case "RESTORE":
+                    return {
+                        ...prevState,
+                        userAuth: action.userObj,
+                        accCreate: action.create
+                    }
+                case "SIGN_OUT":
+                    return {
+                        ...prevState,
+                        userAuth: null,
+                        accCreate: action.create
+                    };
+                case "SIGN_UP":
+                    return {
+                        ...prevState,
+                        userAuth: action.userObj,
+                        accCreate: action.create
+                    };
+                case "TO_CREATE":
+                    return {
+                        ...prevState,
+                        userAuth: null,
+                        accCreate: action.create
+                    };
+                case "TO_SIGN":
+                    return {
+                        ...prevState,
+                        userAuth: null,
+                        accCreate: action.create
+                    }
+            }
+        },
+        {
+            userAuth: null,
+            accCreate: false
         }
-    })
+    );
 
-    function signIn(email, password) {
+    const handleEmail = useCallback((event) => {
+        setEmail(event.target.value);
+    });
+
+    const handlePass = useCallback((event) => {
+        setPass(event.target.value);
+    });
+
+    const createEmail = useCallback((event) => {
+        setEmailCreate(event.target.value);
+    });
+
+    const createPass = useCallback((event) => {
+        setPassCreate(event.target.value);
+    });
+
+    const signIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user)
-                return user;
+                dispatch({ type: "SIGN_IN", userObj: user, create: false  })
             })
             .catch((err) => {
                 console.log({ message: err.message });
             });
     };
 
-    const signOutFunction = () => {
-        signOut(auth)
-            .then(() => {
-                auth.currentUser = null;
-                console.log("User has been signed out");
-                console.log(auth.currentUser)
+    const signUp = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                sendEmailVerification(auth.currentUser)
+                    .then(() => {
+                        console.log("The email verification has been sent.")
+                    })
+                    .catch((err) => ({ message: err.message }));
+                const user = userCredential.user;
+                dispatch({ type: "SIGN_UP", userObj: user, create: false});
+            })
+            .catch((err) => {
+                console.log({ message: err.message });
             });
     };
 
+    const signUpPage = () => {
+        dispatch({ type: "TO_CREATE", create: true })
+    }
+
+    const signInPage = () => {
+        dispatch({ type: "TO_SIGN", create: false })
+    }
+
+    const signOutFunction = useCallback(() => {
+        signOut(auth)
+            .then(() => {
+                setEmail("");
+                setPass("");
+                dispatch({ type: "SIGN_OUT" });
+            });
+    });
+
     return(
-        <div className='main'>
+        <div className='mainAcc'>
             <div className='headerDiv'>
                 <h2 className='title'>
-                    Account
+                    { !state.userAuth ? 'Login' : 'Account' }
                 </h2>
             </div>
-            { !auth.currentUser ? (
+            { !state.userAuth ? (
                 <>
-                    <div className='googleAuth'>
-                        <h4 className='emailTitle'>
-                            Email:
-                        </h4>
-                        <input 
-                            type="text" 
-                            className='email'
-                            onChange={handleEmail}
-                        />
-                        <h4 className='passTitle'>
-                            Password:
-                        </h4>
-                        <input 
-                            type="password" 
-                            className='pass'
-                            value={pass}
-                            onChange={handlePass}
-                        />
-                    </div>
-                    <button 
-                        className='button'
-                        onClick={() => signIn(email, pass)}
-                    >
-                        Sign In
-                    </button>
+                    { !state.accCreate ? (
+                        <>
+                            <div className='googleAuthDiv'>
+                                <h4 className='emailTitle'>
+                                    Email:
+                                </h4>
+                                <input 
+                                    type="text" 
+                                    className='email'
+                                    onChange={handleEmail}
+                                />
+                                <h4 className='passTitle'>
+                                    Password:
+                                </h4>
+                                <input 
+                                    type="password" 
+                                    className='pass'
+                                    onChange={handlePass}
+                                />
+                                <button 
+                                    className='buttonIn'
+                                    onClick={() => signIn(email, pass)}
+                                >
+                                    Sign In
+                                </button>
+                                <button
+                                    className='buttonUp'
+                                    onClick={() => signUpPage()}
+                                >
+                                    Sign Up
+                                </button>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className='googleAuthDiv'>
+                                <h4 className='emailTitle'>
+                                    Email:
+                                </h4>
+                                <input 
+                                    type="text" 
+                                    className='email'
+                                    onChange={createEmail}
+                                />
+                                <h4 className='passTitle'>
+                                    Password:
+                                </h4>
+                                <input 
+                                    type="password" 
+                                    className='pass'
+                                    onChange={createPass}
+                                />
+                                <button 
+                                    className='buttonIn'
+                                    onClick={() => signUp(emailCreate, passCreate)}
+                                >
+                                    Create Account
+                                </button>
+                                <button
+                                    className='buttonUp'
+                                    onClick={() => signInPage()}
+                                >
+                                    Back to Sign In
+                                </button>
+                            </div>
+                        </>
+                    ) }
                 </>
-
             ) : (
                 <>
                     <div className='signedIn'>
                         <h3 className='topPage'>
-                            <h3 className='email'>
+                            <h3 className='emailDisplay'>
                                 {auth.currentUser.email}
                             </h3>
                             <button 
-                                className='signout'
+                                className='signOut'
                                 onClick={() => signOutFunction()}
                             >
                                 Sign Out

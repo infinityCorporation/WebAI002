@@ -8,6 +8,7 @@ import Layout from './pages/Layout';
 import FormulaExp from './pages/formulaExp';
 import FormulaGen from './pages/formulaGen';
 import Extensions from './pages/Extensions';
+import Templates from './pages/Templates';
 import Pricing from './pages/Pricing';
 import Docs from './pages/Docs';
 import Account from './pages/Account';
@@ -22,6 +23,7 @@ root.render(
           <Route path="/formulaGen" element={<FormulaGen />} />
           <Route path="/formulaExp" element={<FormulaExp />} />
           <Route path="/extensions" element={<Extensions />} />
+          <Route path="/templates" element={<Templates />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/docs" element={<Docs />} />
           <Route path="/account" element={<Account />} />

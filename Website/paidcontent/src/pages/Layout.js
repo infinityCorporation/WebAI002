@@ -54,6 +54,16 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link 
+                            to="/templates"
+                            className='templates'
+                        >
+                                <h3 className='templateTitle'>
+                                    Templates
+                                </h3>
+                            </Link>
+                    </li>
+                    <li>
+                        <Link 
                             to="/pricing"
                             className='pricing'
                         >

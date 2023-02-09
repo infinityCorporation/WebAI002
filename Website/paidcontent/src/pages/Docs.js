@@ -3,7 +3,7 @@ import "./Docs.css";
 
 export default function Docs() {
     return(
-        <div className='main'>
+        <div className='mainDocs'>
             <h2 className='title'>
                 Docs
             </h2>
@@ -56,7 +56,7 @@ export default function Docs() {
                     to use, see the following sections.
                 </h4>
                 <h3 className='feBasics'>
-                    2.1 Basics
+                    2.1 Basics:
                 </h3>
             </div>
         </div>
