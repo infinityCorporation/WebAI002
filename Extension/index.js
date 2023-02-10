@@ -1,5 +1,3 @@
-const firebase = require('firebase/app');
-
 const firebaseConfig = {
     apiKey: "AIzaSyC5j-MCGsC12t1Dtb5O6NzeYHbbkw7PBJM",
     authDomain: "arrayassistant-bac51.firebaseapp.com",

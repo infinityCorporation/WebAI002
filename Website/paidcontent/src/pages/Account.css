@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.googleAuthDiv {
+.googleAuthDiv1 {
     border-radius: 15px;
     border: 2px solid black;
     background-color: #796e87;
@@ -20,6 +20,32 @@
     width: 30%;
     height: 50%;
     font-family: 'Roboto Mono';
+}
+
+.googleAuthDiv2 {
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: #796e87;
+    position: relative;
+    left: 35%;
+    width: 30%;
+    height: 64%;
+    font-family: 'Roboto Mono';
+}
+
+.nameTitle {
+    color: white;
+}
+
+.name {
+    background-color: white;
+    width: 270px;
+    height: 35px;
+    border: 2.5px solid black;
+    border-radius: 12.5px;
+    font-size: 19px;
+    font-family: 'Roboto Mono';
+    text-align: center;
 }
 
 .emailTitle {
@@ -100,17 +126,28 @@
     font-size: 18px;
 }
 
-.emailDisplay {
-    background-color: white;
-    width: 30%;
-    height: 35px;
-    border: 2.5px solid black;
-    border-radius: 12.5px;
-    font-size: 19px;
+.accountDisplay {
+    width: 90%;
+    height: 40%;
+    border: 2px solid black;
     position: relative;
-    left: 35%;
-    font-family: 'Roboto Mono';
-    text-align: center;
+    left: 5%;
+    text-align: left;
+}
+
+.nameDisplay {
+    position: relative;
+    left: 5%;
+}
+
+.emailDisplay {
+    position: relative;
+    left: 5%;
+}
+
+.subDisplay {
+    position: relative;
+    left: 5%;
 }
 
 .signOut {
@@ -123,6 +160,7 @@
     background-color: #4AD388;
     font-family: 'Roboto Mono';
     font-size: 18px;
+    margin-left: 10px;
 }
 
 .signOut:active {
@@ -135,4 +173,5 @@
     background-color: #2a8460;
     font-family: 'Roboto Mono';
     font-size: 18px;
+    margin-left: 10px;
 }

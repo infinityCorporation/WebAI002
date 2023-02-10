@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { useState, useCallback, useReducer, useEffect } from 'react';
-import { signInWithEmailAndPassword, sendEmailVerification, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendEmailVerification, updateProfile, signOut, createUserWithEmailAndPassword, updateCurrentUser } from 'firebase/auth';
 import { auth } from '../auth/firebase.js'
+import { Link, Outlet } from 'react-router-dom'
+import { NavLink } from './navStyle';
 import './Account.css';
 
 
@@ -11,6 +13,7 @@ export default function Account() {
     const [pass, setPass] = useState("");
     const [passCreate, setPassCreate] = useState("");
     const [emailCreate, setEmailCreate] = useState("");
+    const [name, setName] = useState("");
 
     const [state, dispatch] = useReducer(
         (prevState, action) => {
@@ -67,6 +70,10 @@ export default function Account() {
         setPass(event.target.value);
     });
 
+    const createName = useCallback((event) => {
+        setName(event.target.value);
+    })
+
     const createEmail = useCallback((event) => {
         setEmailCreate(event.target.value);
     });
@@ -75,10 +82,20 @@ export default function Account() {
         setPassCreate(event.target.value);
     });
 
+    useEffect(() => {
+        const user = auth.currentUser;
+        if (user) {
+            dispatch({ type: "RESTORE", userObj: user });
+        } else {
+            dispatch({ type: "SIGN_IN" });
+        }
+    }, []);
+
     const signIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                console.log(user);
                 dispatch({ type: "SIGN_IN", userObj: user, create: false  })
             })
             .catch((err) => {
@@ -86,20 +103,26 @@ export default function Account() {
             });
     };
 
-    const signUp = (email, password) => {
+    const signUp = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                sendEmailVerification(auth.currentUser)
-                    .then(() => {
-                        console.log("The email verification has been sent.")
-                    })
-                    .catch((err) => ({ message: err.message }));
                 const user = userCredential.user;
                 dispatch({ type: "SIGN_UP", userObj: user, create: false});
             })
             .catch((err) => {
                 console.log({ message: err.message });
             });
+        updateProfile(auth.currentUser, {
+            displayName: name
+        })
+            .then(() => {
+                console.log(auth.currentUser);
+            })
+            .catch((err) => {
+                console.log({ message: err.message });
+            })
+        auth.currentUser.reload();
+
     };
 
     const signUpPage = () => {
@@ -130,7 +153,7 @@ export default function Account() {
                 <>
                     { !state.accCreate ? (
                         <>
-                            <div className='googleAuthDiv'>
+                            <div className='googleAuthDiv1'>
                                 <h4 className='emailTitle'>
                                     Email:
                                 </h4>
@@ -163,7 +186,15 @@ export default function Account() {
                         </>
                     ) : (
                         <>
-                            <div className='googleAuthDiv'>
+                            <div className='googleAuthDiv2'>
+                                <h4 className='nameTitle'>
+                                    First Name:
+                                </h4>
+                                <input
+                                    type="text"
+                                    className='name'
+                                    onChange={createName}
+                                />
                                 <h4 className='emailTitle'>
                                     Email:
                                 </h4>
@@ -182,7 +213,9 @@ export default function Account() {
                                 />
                                 <button 
                                     className='buttonIn'
-                                    onClick={() => signUp(emailCreate, passCreate)}
+                                    onClick={() => {
+                                        signUp(emailCreate, passCreate, name);
+                                    }}
                                 >
                                     Create Account
                                 </button>
@@ -200,9 +233,17 @@ export default function Account() {
                 <>
                     <div className='signedIn'>
                         <h3 className='topPage'>
-                            <h3 className='emailDisplay'>
-                                {auth.currentUser.email}
-                            </h3>
+                            <div className='accountDisplay'>
+                                <h3 className='nameDisplay'>
+                                    { auth.currentUser ? `Name: ${auth.currentUser.displayName}` : `Name: Please Sign In`}
+                                </h3>
+                                <h4 className='emailDisplay'>
+                                    { auth.currentUser ? `Email: ${auth.currentUser.email}` : `Email: Please Sign In`}
+                                </h4>
+                                <h4 className='subDisplay'>
+                                    { auth.currentUser ? `Subscription: Free Plan` : `Subscription: Free Plan` }
+                                </h4>
+                            </div>
                             <button 
                                 className='signOut'
                                 onClick={() => signOutFunction()}
@@ -212,8 +253,18 @@ export default function Account() {
                         </h3>
                         
                     </div>
+                    <Outlet />
                 </>
             )}
         </div>
     )
-}
+};
+
+/*
+styled components for add in
+<NavLink 
+    to="/pricing"
+>
+    Upgrade Account
+</NavLink>
+*/

@@ -1,14 +1,17 @@
 import * as React from 'react';
-//import FormulaGen from './formulaGen';
-//import FormulaExp from './formulaExp';
 import './Home.css';
+import { auth } from '../auth/firebase.js';
 
 export default function Home() {
+
+  console.log(auth.currentUser);
+  const user = auth.currentUser;
+
   return(
     <div className='app'>
       <div className='titleArea'>
         <h1 className='title'>
-          Welcome to Array Assistant!
+          Welcome to Array Assistant
         </h1>
       </div>
       <div className='intro'>
