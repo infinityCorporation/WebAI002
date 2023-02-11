@@ -86,9 +86,9 @@ export default function FormulaGen() {
                   handleExcelClick();
                 }}
                 style={{ 
-                  backgroundColor: excelToggle ? '#2e86ab' : 'white',
+                  backgroundColor: excelToggle ? '#6acff1' : 'white',
                   color: excelToggle ? "white" : "black",
-                  border: excelToggle ? '2px solid #2e86ab' : '2px solid black'
+                  border: excelToggle ? '2px solid #6acff1' : '2px solid black'
                 }}
                 >
                 Excel
@@ -100,9 +100,9 @@ export default function FormulaGen() {
                   setType("Sheets");
                 }}
                 style={{
-                  backgroundColor: sheetsToggle ? '#2e86ab' : 'white',
-                  color: sheetsToggle ? "white" : "black",
-                  border: sheetsToggle ? '2px solid #2e86ab' : ' 2px solid black'
+                  backgroundColor: sheetsToggle ? '#6acff1' : 'white',
+                  color: sheetsToggle ? "#white" : "black",
+                  border: sheetsToggle ? '2px solid #6acff1' : ' 2px solid black'
                 }}
                 >
                 Sheets

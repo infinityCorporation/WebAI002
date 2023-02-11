@@ -43,6 +43,16 @@ export default function Layout() {
                             </Link>
                     </li>
                     <li>
+                        <Link
+                            to='/formulaBank'
+                            className='formBank'
+                        >
+                            <h3 className='formBankTitle'>
+                                Formula Bank
+                            </h3>
+                        </Link>
+                    </li>
+                    <li>
                         <Link 
                             to="/extensions"
                             className='ext'
