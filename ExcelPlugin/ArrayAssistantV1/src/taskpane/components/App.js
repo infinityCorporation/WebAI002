@@ -1,9 +1,8 @@
 import * as React from "react";
+import { useState, useCallback } from 'react';
 import PropTypes from "prop-types";
-import { DefaultButton } from "@fluentui/react";
-import Header from "./Header";
-import HeroList from "./HeroList";
 import Progress from "./Progress";
+
 
 /* global console, Excel, require */
 
@@ -15,24 +14,6 @@ export default class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      listItems: [
-        {
-          icon: "Ribbon",
-          primaryText: "Achieve more with Office integration",
-        },
-        {
-          icon: "Unlock",
-          primaryText: "Unlock features and functionality",
-        },
-        {
-          icon: "Design",
-          primaryText: "Create and visualize like a pro",
-        },
-      ],
-    });
-  }
 
   click = async () => {
     try {
@@ -56,8 +37,38 @@ export default class App extends React.Component {
     }
   };
 
+  /*
+
+  buildRequest = useCallback((event) => {
+    setRequest({
+      type: 'Excel',
+      prompt: event.target.value})
+  });
+
+  fetchRequest = async () => {
+    await fetch("https://aiserver.herokuapp.com/dev_aigen", {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setData(data);
+      })
+      .catch((err) => {
+        console.log({ message: err.message });
+      })
+  }
+  */
+
   render() {
     const { title, isOfficeInitialized } = this.props;
+    const [request, setRequest] = useState();
+    const [data, setData] = useState('');
+    const [ready, setReady] = useState(false);
 
     if (!isOfficeInitialized) {
       return (
@@ -70,16 +81,35 @@ export default class App extends React.Component {
     }
 
     return (
-      <div className="ms-welcome">
-        <Header logo={require("./../../../assets/logo-filled.png")} title={this.props.title} message="Welcome" />
-        <HeroList message="Discover what Office Add-ins can do for you today!" items={this.state.listItems}>
-          <p className="ms-font-l">
-            Modify the source files, then click <b>Run</b>.
-          </p>
-          <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
-            Run
-          </DefaultButton>
-        </HeroList>
+      <div className="main">
+        <div className="headDiv">
+          <h3 className="title">
+            Array Assistant
+          </h3>
+        </div>
+        <div className="bodyDiv">
+          <div className="inputDiv">
+            <h5 className="inputTitle">
+              What should your formula do?
+            </h5>
+            <input 
+              type='text' 
+              className="input"  
+              />
+            <button className="submitButton">
+              Submit
+            </button>
+          </div>
+          <div className="outputDiv">
+            <h5 className="outputTitle">
+              Your formula is:
+            </h5>
+            <input className="output" type="text"/>
+            <button className="copyButton">
+              Copy to Selected Cell
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
