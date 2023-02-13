@@ -2,18 +2,11 @@ import * as React from "react";
 import { useState, useCallback } from 'react';
 import PropTypes from "prop-types";
 import Progress from "./Progress";
-
+import Gen from "../pages/gen";
 
 /* global console, Excel, require */
 
 export default class App extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      listItems: [],
-    };
-  }
-
 
   click = async () => {
     try {
@@ -37,38 +30,8 @@ export default class App extends React.Component {
     }
   };
 
-  /*
-
-  buildRequest = useCallback((event) => {
-    setRequest({
-      type: 'Excel',
-      prompt: event.target.value})
-  });
-
-  fetchRequest = async () => {
-    await fetch("https://aiserver.herokuapp.com/dev_aigen", {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(request)
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-      })
-      .catch((err) => {
-        console.log({ message: err.message });
-      })
-  }
-  */
-
   render() {
     const { title, isOfficeInitialized } = this.props;
-    const [request, setRequest] = useState();
-    const [data, setData] = useState('');
-    const [ready, setReady] = useState(false);
 
     if (!isOfficeInitialized) {
       return (
@@ -81,35 +44,8 @@ export default class App extends React.Component {
     }
 
     return (
-      <div className="main">
-        <div className="headDiv">
-          <h3 className="title">
-            Array Assistant
-          </h3>
-        </div>
-        <div className="bodyDiv">
-          <div className="inputDiv">
-            <h5 className="inputTitle">
-              What should your formula do?
-            </h5>
-            <input 
-              type='text' 
-              className="input"  
-              />
-            <button className="submitButton">
-              Submit
-            </button>
-          </div>
-          <div className="outputDiv">
-            <h5 className="outputTitle">
-              Your formula is:
-            </h5>
-            <input className="output" type="text"/>
-            <button className="copyButton">
-              Copy to Selected Cell
-            </button>
-          </div>
-        </div>
+      <div>
+        <Gen />
       </div>
     );
   }
