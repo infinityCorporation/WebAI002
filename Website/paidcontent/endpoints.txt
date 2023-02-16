@@ -1,0 +1,24 @@
+Array Assistant Server Endpoints
+General Directory
+
+Base URL:
+
+[https://aiserver.herokuapp.com]
+
+Enpoints:
+
+[/dev_aigen] -> Formula Generator Endpoint
+- Input: concise formula description and spreadsheet type
+- Output formula
+
+[/dev_aiexp] -> Formula Explainer Endpoint
+- Input: formula
+- Output: concise formula description
+
+[/dev_aiexplong] -> Problem Explainer Endpoint
+- Input: problem in english
+- Output: concise problem solution
+
+[/dev_aiclean] -> Data Cleaner Endpoint
+- Input: messy data
+- Output: clean data

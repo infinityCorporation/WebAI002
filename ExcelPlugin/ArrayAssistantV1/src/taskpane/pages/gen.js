@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useReducer } from 'react';
 
 export default function Gen() {
     const [request, setRequest] = useState();
-    const [data, setData] = useState('');
-    //const [equation, setEquation] = useState('');
     const [ready, setReady] = useState(false);
+    const [dataGen, setDataGen] = useState();
 
     const buildRequest = useCallback((event) => {
         setRequest({
@@ -26,7 +25,7 @@ export default function Gen() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                setData(data);
+                setDataGen(data);
                 setReady(true);
             })
             .catch((err) => {
@@ -43,8 +42,10 @@ export default function Gen() {
 
                 range.load("address");
 
-                if (data) {
-                    range.values = data.choices[0].text;
+                if (dataGen) {
+                    const preVal = dataGen.choices[0].text;
+                    const postVal = preVal.substring(preVal.indexOf("="));
+                    range.values = postVal;
                 } else {
                     range.values = "Please enter an input with a valid response!";
                 }
@@ -57,50 +58,54 @@ export default function Gen() {
         }
     }
     
-
     return(
-        <div className="main">
-        <div className="headDiv">
-          <h3 className="title">
-            Array Assistant
-          </h3>
+        <div className='container'>
+            <div className="main">
+                <div className="headDiv">
+                    <h3 className="title">
+                        Array Assistant
+                    </h3>
+                </div>
+                <div className="bodyDiv">
+                    <div className="inputDiv">
+                        <h5 className="inputTitle">
+                        What should your formula do?
+                        </h5>
+                        <textarea 
+                            type='text' 
+                            className="input" 
+                            placeholder='Explain Your Formula...'
+                            rows='4'
+                            cols='40'
+                            onChange={(text) => {
+                                buildRequest(text);
+                            }} 
+                            />
+                        <button 
+                            className="submitButton"
+                            onClick={() => {
+                                fetchRequest();
+                            }}
+                        >
+                            Submit
+                        </button>
+                    </div>
+                    <div className="outputDiv">
+                        <h5 className="outputTitle">
+                        Your formula is:
+                        </h5>
+                        <input className="output" type="text" value={ !ready ? "No Input Yet" : dataGen.choices[0].text }/>
+                        <button 
+                            className="copyButton"
+                            onClick={() => {
+                                changeVal();
+                            }}
+                        >
+                        Copy to Selected Cell
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="bodyDiv">
-          <div className="inputDiv">
-            <h5 className="inputTitle">
-              What should your formula do?
-            </h5>
-            <input 
-                type='text' 
-                className="input" 
-                onChange={(text) => {
-                    buildRequest(text);
-                }} 
-                />
-            <button 
-                className="submitButton"
-                onClick={() => {
-                    fetchRequest();
-                }}
-            >
-                Submit
-            </button>
-          </div>
-          <div className="outputDiv">
-            <h5 className="outputTitle">
-              Your formula is:
-            </h5>
-            <input className="output" type="text" value={ !ready ? "No Input Yet" : data.choices[0].text }/>
-            <button 
-                className="copyButton"
-                onClick={() => {
-                    changeVal();
-                }}
-            >
-              Copy to Selected Cell
-            </button>
-          </div>
-        </div>
-      </div>
     )
 }
