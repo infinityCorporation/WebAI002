@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useState, useCallback, useReducer, useEffect } from 'react';
 import { signInWithEmailAndPassword, sendEmailVerification, updateProfile, signOut, createUserWithEmailAndPassword, updateCurrentUser } from 'firebase/auth';
-import { auth } from '../auth/firebase.js'
+import { auth, db } from '../auth/firebase.js'
+import { getProducts } from '@stripe/firestore-stripe-payments';
 import { Link, Outlet } from 'react-router-dom'
 import { NavLink } from './navStyle';
 import './Account.css';
@@ -124,6 +125,7 @@ export default function Account() {
         auth.currentUser.reload();
 
     };
+
 
     const signUpPage = () => {
         dispatch({ type: "TO_CREATE", create: true })

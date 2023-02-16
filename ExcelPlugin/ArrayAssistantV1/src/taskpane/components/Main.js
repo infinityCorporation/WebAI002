@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useCallback, useReducer, useState} from 'react';
 import Gen from '../pages/gen';
 import Exp from '../pages/exp';
+import Clean from '../pages/clean'
+import Profile from '../pages/profile';
 
 export default function Main() {
     const [state, dispatch] = useReducer(
@@ -91,13 +93,13 @@ function displaySwitch(state) {
         case 3:
             return(
                 <h4>
-                    This is the Data Cleaning Page
+                    <Clean />
                 </h4>
             );
         case 4:
             return(
                 <h4>
-                    This is the Profile Page
+                    <Profile />
                 </h4>
             )
     }
