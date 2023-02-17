@@ -5,6 +5,7 @@ import { auth, db } from '../auth/firebase.js'
 import { getProducts } from '@stripe/firestore-stripe-payments';
 import { Link, Outlet } from 'react-router-dom'
 import { NavLink } from './navStyle';
+import { collection, addDoc, getDoc, setDoc, doc } from 'firebase/firestore';
 import './Account.css';
 
 
@@ -15,6 +16,8 @@ export default function Account() {
     const [passCreate, setPassCreate] = useState("");
     const [emailCreate, setEmailCreate] = useState("");
     const [name, setName] = useState("");
+    const [userInfo, setUserInfo] = useState();
+    const [readyUI, setReadyUI] =useState(false);
 
     const [state, dispatch] = useReducer(
         (prevState, action) => {
@@ -99,6 +102,15 @@ export default function Account() {
                 console.log(user);
                 dispatch({ type: "SIGN_IN", userObj: user, create: false  })
             })
+            .then(async () => {
+                try {
+                    const loadVals = await getDoc(doc(db, 'customers', auth.currentUser.uid));
+                    setUserInfo(loadVals.data());
+                    setReadyUI(true);
+                } catch (err) {
+                    console.log({ message: err.message });
+                }
+            })
             .catch((err) => {
                 console.log({ message: err.message });
             });
@@ -110,20 +122,31 @@ export default function Account() {
                 const user = userCredential.user;
                 dispatch({ type: "SIGN_UP", userObj: user, create: false});
             })
+            .then(async () => {
+                try {
+                    await setDoc(doc(db, "customers", auth.currentUser.uid), {
+                        firstName: name,
+                        uid: auth.currentUser.uid,
+                        userEmail: auth.currentUser.email,
+                        userSubscription: 'Free'
+                      });
+                    console.log("document was saved with is" + auth.currentUser.uid);
+                } catch (err) {
+                    console.log({ message: err.message });
+                }
+            })
+            .then(async () => {
+                try {
+                    const loadVals = await getDoc(doc(db, 'customers', auth.currentUser.uid));
+                    setUserInfo(loadVals);
+                    setReadyUI(true);
+                } catch (err) {
+                    console.log({ message: err.message });
+                }
+            })
             .catch((err) => {
                 console.log({ message: err.message });
             });
-        updateProfile(auth.currentUser, {
-            displayName: name
-        })
-            .then(() => {
-                console.log(auth.currentUser);
-            })
-            .catch((err) => {
-                console.log({ message: err.message });
-            })
-        auth.currentUser.reload();
-
     };
 
 
@@ -237,13 +260,13 @@ export default function Account() {
                         <h3 className='topPage'>
                             <div className='accountDisplay'>
                                 <h3 className='nameDisplay'>
-                                    { auth.currentUser ? `Name: ${auth.currentUser.displayName}` : `Name: Please Sign In`}
+                                    { readyUI ? `Name: ${userInfo.firstName}` : `Name: Please Sign In`}
                                 </h3>
                                 <h4 className='emailDisplay'>
                                     { auth.currentUser ? `Email: ${auth.currentUser.email}` : `Email: Please Sign In`}
                                 </h4>
                                 <h4 className='subDisplay'>
-                                    { auth.currentUser ? `Subscription: Free Plan` : `Subscription: Free Plan` }
+                                    { readyUI ? `Subscription: ${userInfo.userSubscription}` : `Subscription: Free Plan` }
                                 </h4>
                             </div>
                             <button 
