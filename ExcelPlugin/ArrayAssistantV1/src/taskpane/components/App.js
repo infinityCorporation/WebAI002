@@ -2,7 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import Progress from "./Progress";
 import Gen from "../pages/gen";
-import Main from "./Main";
+import Main from "../pages/Main";
 
 export default class App extends React.Component {
 
