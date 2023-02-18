@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Outlet, Link } from 'react-router-dom';
+import { NavLink } from './navStyle';
 import './Layout.css';
 
 export default function Layout() {
@@ -13,18 +14,21 @@ export default function Layout() {
                 </div>
                 <ul className='list'>
                     <li>
-                        <Link 
-                            to="/"
+                        <NavLink 
+                            to="/customerPortal/"
                             className='home'
                         >
-                                <h3 className='homeTitle'>
-                                    Home
-                                </h3>
-                            </Link>
+                            <h3 className='homeTitle'>
+                                Home
+                            </h3>
+                        </NavLink>
                     </li>
+                    <h2 className='formSection'>
+                        Formulas
+                    </h2>
                     <li>
                         <Link 
-                            to="/formulaGen"
+                            to="/customerPortal/formulaGen"
                             className='formGen'
                         >
                                 <h3 className='formGenTitle'>
@@ -34,7 +38,7 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link 
-                            to="/formulaExp"
+                            to="/customerPortal/formulaExp"
                             className='formExp'
                         >
                                 <h3 className='formExpTitle'>
@@ -44,7 +48,7 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link
-                            to='/formulaBank'
+                            to='/customerPortal/formulaBank'
                             className='formBank'
                         >
                             <h3 className='formBankTitle'>
@@ -52,9 +56,12 @@ export default function Layout() {
                             </h3>
                         </Link>
                     </li>
+                    <h2 className='addonsSection'>
+                        Add-Ons
+                    </h2>
                     <li>
                         <Link 
-                            to="/extensions"
+                            to="/customerPortal/extensions"
                             className='ext'
                         >
                                 <h3 className='extTitle'>
@@ -64,7 +71,7 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link 
-                            to="/templates"
+                            to="/customerPortal/templates"
                             className='templates'
                         >
                                 <h3 className='templateTitle'>
@@ -72,9 +79,12 @@ export default function Layout() {
                                 </h3>
                             </Link>
                     </li>
+                    <h2 className='infoSection'>
+                        Info
+                    </h2>
                     <li>
                         <Link 
-                            to="/pricing"
+                            to="/customerPortal/pricing"
                             className='pricing'
                         >
                                 <h3 className='pricingTitle'>
@@ -84,7 +94,7 @@ export default function Layout() {
                     </li>
                     <li>
                         <Link 
-                            to="/docs"
+                            to="/customerPortal/docs"
                             className='docs'
                         >
                                 <h3 className='docsTitle'>
@@ -95,7 +105,7 @@ export default function Layout() {
                 </ul>
                 <div className='accountSpace'>
                     <Link
-                        to="/account"
+                        to="/customerPortal/account"
                         className='account'
                     >
                         <h3 className='username'>
@@ -106,7 +116,7 @@ export default function Layout() {
             </nav>
 
             <Outlet />
-            <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'/>
+            <link href='https://fonts.googleapis.com/css?family=inter' rel='stylesheet'/>
         </>
     )
 };

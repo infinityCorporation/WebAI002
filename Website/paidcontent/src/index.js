@@ -15,6 +15,7 @@ import Templates from './pages/Templates';
 import Pricing from './pages/Pricing';
 import Docs from './pages/Docs';
 import Account from './pages/Account';
+import HomeFront from './pagesFront/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,18 +23,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter className="router">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route index element={<HomeFront />} />
+        <Route path="/" element={<HomeFront />}>
+          <Route />
+        </Route>
+        <Route path="/customerPortal" element={<Layout />} >
           <Route index element={<Home />} />
-          <Route path="/formulaGen" element={<FormulaGen />} />
-          <Route path="/formulaExp" element={<FormulaExp />} />
-          <Route path='/formulaBank' element={<FormulaBank />} />
-          <Route path="/extensions" element={<Extensions />} />
-          <Route path="/templates" element={<Templates />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/docs" element={<Docs />} />
-          <Route path="/account" element={<Account />} />
+          <Route path="/customerPortal/" element={<Home />} />
+          <Route path="/customerPortal/formulaGen" element={<FormulaGen />} />
+          <Route path="/customerPortal/formulaExp" element={<FormulaExp />} />
+          <Route path="/customerPortal/formulaBank" element={<FormulaBank />} />
+          <Route path="/customerPortal/extensions" element={<Extensions />} />
+          <Route path="/customerPortal/templates" element={<Templates />} />
+          <Route path="/customerPortal/pricing" element={<Pricing />} />
+          <Route path="/customerPortal/docs" element={<Docs />} />
+          <Route path="/customerPortal/account" element={<Account />} />
         </Route>
       </Routes>
     </BrowserRouter>
 );
-
