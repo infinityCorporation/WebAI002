@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const NavLink = styled(Link)`
+export const StyledLink = styled(Link)`
     width: 100%;
     color: red;
 `
