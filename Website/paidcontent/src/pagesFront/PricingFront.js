@@ -1,14 +1,16 @@
 import * as React from 'react';
 import BarNav from './BarComponent';
-import './Home.css';
+import './Pricing.css';
 
-export default function HomeFront() {
+export default function PricingFront() {
     return(
-        <div className='homeContainer'>
+        <div className='pricingMain'>
             <BarNav />
-            <h3>
-                Welcome to Array Assistant!
-            </h3>
+            <div>
+                <h3>
+                    This is the pricing page.
+                </h3>
+            </div>
             <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
         </div>
     )

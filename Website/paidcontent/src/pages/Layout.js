@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Outlet, Link } from 'react-router-dom';
-import { NavLink } from './navStyle';
+import { StyledLink } from './navStyle';
+import { TitleLink } from '../pagesFront/StyledLink';
 import './Layout.css';
 
 export default function Layout() {
@@ -8,20 +9,22 @@ export default function Layout() {
         <>
             <nav className='nav' >
                 <div className='navTop'>
-                    <h2 className='headerTop'>
+                    <h2 
+                        className='headerTop'
+                    >
                         Array Assistant
                     </h2>
                 </div>
                 <ul className='list'>
                     <li>
-                        <NavLink 
+                        <Link 
                             to="/customerPortal/"
                             className='home'
                         >
                             <h3 className='homeTitle'>
                                 Home
                             </h3>
-                        </NavLink>
+                        </Link>
                     </li>
                     <h2 className='formSection'>
                         Formulas
