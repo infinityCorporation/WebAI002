@@ -11,7 +11,7 @@ export default function BarNav() {
                     height: 100,
                     position: 'relative',
                     top: 0,
-                    left: 0
+                    left: 0,
                 }}
             >
 
@@ -25,15 +25,16 @@ export default function BarNav() {
                     top: 0,
                     left: 0,
                     justifyContent: 'center',
+                    background: 'white'
                 }}
             >
                 <TitleLink
                     to='/'
                     className='frontPage'
                 >
-                    <h2>
+                    <h1>
                         Array Assistant
-                    </h2>
+                    </h1>
                 </TitleLink>
                 <div 
                     className='subDiv'
@@ -43,7 +44,7 @@ export default function BarNav() {
                         color: 'black',
                         position: 'relative',
                         left: '70%',
-                        top: -50,
+                        top: -65,
                         display: 'inline-flex'
                     }}
                 >
@@ -52,33 +53,36 @@ export default function BarNav() {
                             to='/features'
                             className='testPage'
                         >
-                            <h3 
+                            <h2 
                                 className='testTitle'
                                 style={{
                                     width: 150
                                 }}
                             >
                                 Features
-                            </h3>
+                            </h2>
                         </SubLink>
                         <SubLink
                             to='/pricing'
                             className='testPage'
                         >
-                            <h3 
+                            <h2 
                                 className='testTitle'
                                 style={{
                                     width: 150
                                 }}
                             >
                                 Pricing
-                            </h3>
+                            </h2>
                         </SubLink>
                         <SubLink
-                            to='/customerPortal'
+                            to='/'
+                            onClick={() => {
+                                document.getElementById('waitlistTop').scrollIntoView()
+                            }}
                             className='testPage'
                         >
-                            <h3 
+                            <h2 
                                 className='testTitle'
                                 style={{
                                     width: 175,
@@ -86,7 +90,7 @@ export default function BarNav() {
                                 }}
                             >
                                 Sign Up
-                            </h3>
+                            </h2>
                         </SubLink>
 
                 </div>
@@ -95,3 +99,11 @@ export default function BarNav() {
         </div>
     )
 }
+
+/*
+
+placeholder div for fixed element usage
+
+
+
+*/

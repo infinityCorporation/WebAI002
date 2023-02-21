@@ -2,3 +2,10 @@
     font-family: Inter;
     font-weight: 100;
 }
+.infoSection {
+    font-family: Inter;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}

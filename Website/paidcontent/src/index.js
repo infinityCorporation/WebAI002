@@ -18,6 +18,8 @@ import Account from './pages/Account';
 import HomeFront from './pagesFront/Home';
 import Features from './pagesFront/Features';
 import PricingFront from './pagesFront/PricingFront';
+import About from './pagesFront/About';
+import Legal from './pagesFront/Legal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -29,6 +31,8 @@ root.render(
         <Route path="/" element={<HomeFront />} />
         <Route path="/features" element={<Features /> } />
         <Route path="/pricing" element={<PricingFront /> } />
+        <Route path="/about" element={<About />} />
+        <Route path="/legal" element={<Legal />} />
         <Route path="/customerPortal" element={<Layout />} >
           <Route index element={<Home />} />
           <Route path="/customerPortal/" element={<Home />} />
