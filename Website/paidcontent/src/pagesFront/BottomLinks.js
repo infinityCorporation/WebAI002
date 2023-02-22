@@ -4,7 +4,11 @@ import { BtmLink } from './BottomStyledLink.js';
 
 export default function BottomLinks() {
     return(
-        <div>
+        <div
+            style={{
+                height: 250
+            }}
+        >
             <h5
                 style={{
                     height: 20,
@@ -59,7 +63,6 @@ export default function BottomLinks() {
             >
                 Legal
             </BtmLink>
-            <Outlet />
         </div>
     )
 }

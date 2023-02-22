@@ -9,17 +9,6 @@ export default function BarNav() {
                 style={{
                     width: '100%',
                     height: 100,
-                    position: 'relative',
-                    top: 0,
-                    left: 0,
-                }}
-            >
-
-            </div>
-            <div
-                style={{
-                    width: '100%',
-                    height: 100,
                     color: 'black',
                     position: 'fixed',
                     top: 0,
@@ -104,6 +93,15 @@ export default function BarNav() {
 
 placeholder div for fixed element usage
 
+<div
+                style={{
+                    width: '100%',
+                    height: 100,
+                    position: 'relative',
+                    top: 0,
+                    left: 0,
+                }}
+            >
 
 
 */
