@@ -83,7 +83,7 @@ function cardDisplay(title, description, src) {
                     top: 40
                 }}
             />
-            <h2 style={{position: 'relative', top: 40, color: '#28a460'}}>
+            <h2 style={{position: 'relative', top: 40, color: '#4ad388'}}>
                 {title}
             </h2>
             <h4 style={{position: 'relative', top: 40, color: 'white', fontWeight: 200, margin: '5%'}}>
