@@ -48,7 +48,7 @@ export default function HomeFront() {
                             fontSize: 42,
                         }}
                     >
-                        Spreadsheet Productivity Boosted with AI
+                        <span style={{color: '#4ad388'}}>Spreadsheet Productivity</span> Boosted with <span style={{color: '#4ad388'}}>AI</span>
                     </h1>
                     <div 
                         className='underline'
