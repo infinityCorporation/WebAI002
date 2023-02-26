@@ -26,9 +26,9 @@ export default function PricingComponent() {
                     top: -21.5,
                     left: 0,
                     textAlign: 'center',
-                    backgroundColor: '#4ad388',
-                    borderTopLeftRadius: 13.5,
-                    borderBottomLeftRadius: 13.5
+                    backgroundColor: '#333333',
+                    borderTopLeftRadius: 12,
+                    borderBottomLeftRadius: 12,
                 }}
             >
                 <h1 
@@ -36,7 +36,7 @@ export default function PricingComponent() {
                         position: 'relative',
                         top: 25,
                         height: 60,
-                        borderBottom: '2px solid black',
+                        color: "#4ad388",
                         }}
                 >
                     Personal
@@ -49,8 +49,8 @@ export default function PricingComponent() {
                         fontWeight: 'normal',
                         position: 'relative',
                         top: 3.5,
-                        backgroundColor: 'white',
-                        height: 200
+                        color: 'white',
+                        height: 200,
                     }}
                 >
                     <div
@@ -71,7 +71,6 @@ export default function PricingComponent() {
                 <div 
                     className='personalbut'
                     style={{
-                        backgroundColor: 'white',
                         height: 117,
                         borderBottomLeftRadius: 13.5
                     }}
@@ -86,9 +85,9 @@ export default function PricingComponent() {
                             fontSize: 20,
                             fontWeight: 600,
                             background: '#333333',
-                            border: '#333333 solid',
+                            border: 'white solid',
                             color: 'white',
-                            borderRadius: 15
+                            borderRadius: 15,
                         }}
                     >
                         Sign Up
@@ -105,9 +104,9 @@ export default function PricingComponent() {
                     left: '50%',
                     borderLeft: '2px solid black',
                     textAlign: 'center',
-                    backgroundColor: '#4ad388',
-                    borderTopRightRadius: 13.5,
-                    borderBottomRightRadius: 13.5
+                    backgroundColor: '#333333',
+                    borderTopRightRadius: 12,
+                    borderBottomRightRadius: 12,
                 }}
             >
                 <h1
@@ -115,7 +114,7 @@ export default function PricingComponent() {
                         position: 'relative',
                         top: 25,
                         height: 60,
-                        borderBottom: '2px solid black'
+                        color: "#4ad388",
                         }}
                 >
                     Professional
@@ -128,7 +127,6 @@ export default function PricingComponent() {
                         fontWeight: 'normal',
                         position: 'relative',
                         top: 3.5,
-                        backgroundColor: 'white',
                         height: 200
                     }}
                 >
@@ -138,7 +136,8 @@ export default function PricingComponent() {
                             position: 'relative',
                             left: '10%',
                             top: 20,
-                            lineHeight: 1.5
+                            lineHeight: 1.5,
+                            color: 'white',
                         }}
                     >
                         <p> - Clean and Prepare Large Amounts of Data <br/>
@@ -150,7 +149,6 @@ export default function PricingComponent() {
                 <div 
                     className='personalbut'
                     style={{
-                        backgroundColor: 'white',
                         height: 117,
                         borderBottomRightRadius: 13.5
                     }}
@@ -165,7 +163,7 @@ export default function PricingComponent() {
                             fontSize: 20,
                             fontWeight: 600,
                             background: '#333333',
-                            border: '#333333 solid',
+                            border: 'white solid',
                             color: 'white',
                             borderRadius: 15
                         }}
