@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TitleLink, SubLink } from './StyledLink';
 import { Outlet } from 'react-router-dom';
+import logo from '../images/logoT.png';
 
 export default function BarNav() {
     return(
@@ -17,9 +18,20 @@ export default function BarNav() {
                     background: 'white'
                 }}
             >
+                <img src={logo} height="150px" width="150px" 
+                    style={{
+                        position: 'absolute',
+                        top: -20,
+                        left: -20
+                    }}
+                />
                 <TitleLink
                     to='/'
                     className='frontPage'
+                    style={{
+                        position: 'relative',
+                        left: 100
+                    }}
                 >
                     <h1>
                         Array Assistant
