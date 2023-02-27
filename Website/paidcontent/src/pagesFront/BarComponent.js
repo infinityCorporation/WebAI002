@@ -76,11 +76,14 @@ export default function BarNav() {
                                 Pricing
                             </h2>
                         </SubLink>
-                        <SubLink
-                            to='/'
-                            onClick={() => {
-                                document.getElementById('waitlistTop').scrollIntoView()
+                        <a
+                            style={{
+                                textDecoration: 'none',
+                                fontFamily: 'Inter',
+                                color: 'black',
+                                justifyContent: 'center',
                             }}
+                            href='https://buy.stripe.com/00g6rt8pp1wQbkceUU'
                             className='testPage'
                         >
                             <h2 
@@ -92,7 +95,7 @@ export default function BarNav() {
                             >
                                 Sign Up
                             </h2>
-                        </SubLink>
+                        </a>
 
                 </div>
                 <Outlet />

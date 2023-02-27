@@ -21,7 +21,7 @@ export default function Features() {
                     height: 800,
                     width: '100%',
                     position: 'relative',
-                    top: 150,
+                    top: 105,
                 }}
             >
                 <div
@@ -35,7 +35,7 @@ export default function Features() {
                             fontSize: 50,
                         }}
                     >
-                        Excel. <span style={{color: '#4ad388'}}>Simplified.</span>
+                        Excel. <span style={{color: '#4ad388'}}>Simplified</span>.
                     </h1>
                 </div>
                 <div

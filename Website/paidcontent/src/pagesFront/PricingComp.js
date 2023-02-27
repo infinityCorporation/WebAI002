@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './PricingComp.css'
+import { Outlet, Link } from 'react-router-dom';
 
 export default function PricingComponent() {
     return(
@@ -75,6 +76,9 @@ export default function PricingComponent() {
                         borderBottomLeftRadius: 13.5
                     }}
                 >
+                    <Link
+                        to="/"
+                    >
                     <button
                         style={{
                             position: 'relative',
@@ -92,6 +96,7 @@ export default function PricingComponent() {
                     >
                         Sign Up
                     </button>
+                    </Link>
                 </div>
             </div>
             <div
@@ -148,6 +153,9 @@ export default function PricingComponent() {
                 </div>
                 <div 
                     className='personalbut'
+                    onClick={() => {
+                        document.getElementById('tierInfo').scrollIntoView()
+                    }}
                     style={{
                         height: 117,
                         borderBottomRightRadius: 13.5

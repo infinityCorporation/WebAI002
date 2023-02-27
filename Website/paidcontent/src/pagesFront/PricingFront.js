@@ -32,7 +32,7 @@ export default function PricingFront() {
                 >
                     <PricingComponent />
                 </div>
-                <div>
+                <div id='tierInfo'>
                     {bottomCardDisplay(persTitle, persDes, persDesTwo, persIcon)}
                     {bottomCardDisplay(proTitle, proDes, proDesTwo, proIcon)}
                     {bottomCardDisplay(entTitle, entDes, entDesTwo, entIcon)}
