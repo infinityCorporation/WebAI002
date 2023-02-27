@@ -2,9 +2,7 @@ import * as React from 'react';
 import { useState, useCallback, useReducer, useEffect } from 'react';
 import { signInWithEmailAndPassword, sendEmailVerification, updateProfile, signOut, createUserWithEmailAndPassword, updateCurrentUser } from 'firebase/auth';
 import { auth, db } from '../auth/firebase.js'
-import { getProducts } from '@stripe/firestore-stripe-payments';
 import { Link, Outlet } from 'react-router-dom'
-import { NavLink } from './navStyle';
 import { collection, addDoc, getDoc, setDoc, doc } from 'firebase/firestore';
 import './Account.css';
 

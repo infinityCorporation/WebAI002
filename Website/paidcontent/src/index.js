@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import { db, auth, app } from './auth/firebase.js';
-import Stripe from 'stripe';
 
 import Home from './pages/Home';
 import Layout from './pages/Layout';
@@ -20,6 +18,8 @@ import Features from './pagesFront/Features';
 import PricingFront from './pagesFront/PricingFront';
 import About from './pagesFront/About';
 import Legal from './pagesFront/Legal';
+import CreateAccount from './pagesFront/CreateAccount';
+import { auth, db } from './auth/firebase.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -31,6 +31,7 @@ root.render(
         <Route path="/" element={<HomeFront />} />
         <Route path="/features" element={<Features /> } />
         <Route path="/pricing" element={<PricingFront /> } />
+        <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/about" element={<About />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/customerPortal" element={<Layout />} >
