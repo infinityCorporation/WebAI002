@@ -17,25 +17,55 @@ export default function Features() {
     return(
         <div className='featuresMain'>
             <div
-                className='featuresContent'
                 style={{
-                    height: 600,
+                    height: 800,
                     width: '100%',
                     position: 'relative',
                     top: 150,
-                    justifyContent: 'center',
-                    display: 'flex',
-                    background: 'white'
                 }}
             >
-                <div>
-                    {cardDisplay(titleAI, desAI, ai)}
+                <div
+                    style={{
+                        paddingLeft: 200,
+                    }}
+                >
+                    <h1
+                        style={{
+                            fontFamily: 'Inter',
+                            fontSize: 50,
+                        }}
+                    >
+                        Excel. <span style={{color: '#4ad388'}}>Simplified.</span>
+                    </h1>
                 </div>
-                <div>
-                    {cardDisplay(titleInt, desInt, int)}
+                <div
+                    className='featuresContent'
+                    style={{
+                        height: 600,
+                        width: '100%',
+                        position: 'relative',
+                        justifyContent: 'center',
+                        display: 'flex',
+                        background: 'white'
+                    }}
+                >
+                    <div>
+                        {cardDisplay(titleAI, desAI, ai)}
+                    </div>
+                    <div>
+                        {cardDisplay(titleInt, desInt, int)}
+                    </div>
+                    <div>
+                        {cardDisplay(titleForm, desForm, form)}
+                    </div>
                 </div>
-                <div>
-                    {cardDisplay(titleForm, desForm, form)}
+                <div
+                    style={{
+                        justifyContent: 'center',
+                        position: 'relative',
+                        top: -100
+                    }}
+                >
                 </div>
             </div>
             <div
@@ -69,7 +99,7 @@ function cardDisplay(title, description, src) {
                 fontFamily: 'Inter',
                 textAlign: 'center',
                 border: '2px solid white',
-                margin: 10,
+                margin: 15,
                 alignItems: 'center',
                 background: '#333333'
             }}
@@ -88,6 +118,32 @@ function cardDisplay(title, description, src) {
             </h2>
             <h4 style={{position: 'relative', top: 40, color: 'white', fontWeight: 200, margin: '5%'}}>
                 {description}
+            </h4>
+        </div>
+    )
+}
+
+function bottomCardDisplay(featTitle, featDescription, featIcon) {
+    return(
+        <div 
+            className='botCardDiv'
+            style={{
+                width: '75%',
+                height: 350,
+                backgroundColor: "#333333",
+                color: 'white',
+                position: 'relative',
+                left: '12.5%',
+                borderRadius: 15,
+                fontFamily: 'Inter',
+                padding: 15
+            }}
+        >
+            <h2>
+                {featTitle}
+            </h2>
+            <h4>
+                {featDescription}
             </h4>
         </div>
     )
