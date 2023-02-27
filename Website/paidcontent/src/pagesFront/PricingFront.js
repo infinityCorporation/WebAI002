@@ -6,6 +6,9 @@ import './Pricing.css';
 import persIcon from './user.png';
 import proIcon from './briefcase.png';
 import entIcon from './flask.png';
+import { db } from '../auth/firebase';
+import { useEffect } from 'react';
+import { doc, collection, getDoc, query, where, getDocs } from 'firebase/firestore';
 
 export default function PricingFront() {
 
@@ -19,7 +22,52 @@ export default function PricingFront() {
 
     const entTitle = "Enterprise Tier";
     const entDes = "We are working hard to develop a full scale solution for Businesses around the world. Array Assistant can save your workers hours and your business money!";
-    const entDesTwo = "If you are interested in getting Array Assistant for your business, contact us today to learn more and get a spot on the Enterprise waitlist!"
+    const entDesTwo = "If you are interested in getting Array Assistant for your business, contact us today to learn more and get a spot on the Enterprise waitlist!";
+
+    /*
+    db.collection('products')
+        .where('active', '==', true)
+        .get()
+        .then(function (querySnapshot) {
+            querySnapshot.forEach(async function (doc) {
+            console.log(doc.id, ' => ', doc.data());
+            const priceSnap = await doc.ref.collection('prices').get();
+            priceSnap.docs.forEach((doc) => {
+                console.log(doc.id, ' => ', doc.data());
+            });
+            });
+        });
+    */
+
+    const q = query(collection(db, 'products'), where ('active', '==', true));
+
+    /*
+    const querySnapshot = getDocs(q);
+    
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+    });
+    */
+
+    const getProducts = async () => {
+        let products;
+
+        await getDocs(q)
+            .then((doc) => {
+                products = doc.docs;
+                console.log(products);
+                return products;
+            })
+            .catch((err) => {
+                console.log({ message: err.message });
+            });
+
+        products.forEach((doc) => {
+            console.log(doc._document.data.value.mapValue.fields.description);
+        })
+    };
+    
+
     return(
         <div className='pricingMain'>
             <div>
@@ -27,7 +75,7 @@ export default function PricingFront() {
                     className='pricingContentDiv'
                     style={{
                         width: '100%',
-                        height: 700
+                        height: 1000
                     }}
                 >
                     <PricingComponent />
@@ -36,6 +84,18 @@ export default function PricingFront() {
                     {bottomCardDisplay(persTitle, persDes, persDesTwo, persIcon)}
                     {bottomCardDisplay(proTitle, proDes, proDesTwo, proIcon)}
                     {bottomCardDisplay(entTitle, entDes, entDesTwo, entIcon)}
+                </div>
+                <div id="stripeProducts" >
+                    <button 
+                        id="getProductsButton"
+                        onClick={getProducts}
+                        style={{
+                            position: 'relative',
+                            top: 100
+                        }}
+                    >
+                        Click me to get the Products from Firebase
+                    </button>
                 </div>
             </div>
             <div
