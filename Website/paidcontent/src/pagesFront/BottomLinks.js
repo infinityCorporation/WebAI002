@@ -6,7 +6,8 @@ export default function BottomLinks() {
     return(
         <div
             style={{
-                height: 250
+                height: 250,
+                width: '100%',
             }}
         >
             <h5

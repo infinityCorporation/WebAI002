@@ -4,6 +4,7 @@ import { getDoc, setDoc, doc } from 'firebase/firestore';
 import { useState, useCallback } from 'react';
 import { sendEmailVerification, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../auth/firebase.js';
+import BottomLinks from './BottomLinks';
 
 export default function CreateAccount() {
     const [passCreate, setPassCreate] = useState("");
@@ -44,33 +45,36 @@ export default function CreateAccount() {
 
     return(
         <div id="accountCreationDiv">
-            <div className='googleAuthDiv2'>
+            <h1 id="accountCreationHeader">
+                Create An Account
+            </h1>
+            <div id='googleAuthDiv2'>
                 <h4 className='nameTitle'>
                     First Name:
                 </h4>
                 <input
                     type="text"
-                    className='name'
+                    id='name'
                     onChange={createName}
                 />
-                <h4 className='emailTitle'>
+                <h4 id='emailTitle'>
                     Email:
                 </h4>
                 <input 
                     type="text" 
-                    className='email'
+                    id='email'
                     onChange={createEmail}
                 />
-                <h4 className='passTitle'>
+                <h4 id='passTitle'>
                     Password:
                 </h4>
                 <input 
                     type="password" 
-                    className='pass'
+                    id='pass'
                     onChange={createPass}
                 />
                 <button 
-                    className='buttonIn'
+                    id='buttonIn'
                     onClick={() => {
                         signUp(emailCreate, passCreate, name);
                     }}
@@ -78,6 +82,22 @@ export default function CreateAccount() {
                     Create Account
                 </button>
             </div>
+            <div
+                className='infoSection'
+                style={{
+                    width: '103%',
+                    height: 250,
+                    position: 'relative',
+                    top: 100,
+                    left: "-1.5%",
+                    margin: 0,
+                    color: 'white',
+                    backgroundColor: '#1F1F1F'
+                }}
+            >
+                <BottomLinks />
+            </div>
+            <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
         </div>
     )
 }
