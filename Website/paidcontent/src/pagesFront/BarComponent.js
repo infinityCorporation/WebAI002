@@ -18,7 +18,7 @@ export default function BarNav() {
                     background: 'white'
                 }}
             >
-                <img src={logo} height="150px" width="150px" 
+                <img src={logo} height="150px" width="150px" alt="logo"
                     style={{
                         position: 'absolute',
                         top: -20,

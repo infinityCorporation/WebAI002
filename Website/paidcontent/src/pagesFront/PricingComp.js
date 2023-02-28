@@ -76,7 +76,6 @@ export default function PricingComponent() {
                     className='personalFeat'
                     style={{
                         fontSize: 20,
-                        color: 'black',
                         fontWeight: 'normal',
                         position: 'relative',
                         top: 3.5,

@@ -5,11 +5,9 @@ import './formulaExp.css';
 export default function FormulaExp() {
     const [data, setData] = useState("");
     const [ready, setReady] = useState(false);
-    const [equation, setEquation] = useState("");
     const [request, setRequest] = useState();
   
     const handleInputChange = (event) => {
-      setEquation(event.target.value);
       setRequest({
         equation: event.target.value
       });

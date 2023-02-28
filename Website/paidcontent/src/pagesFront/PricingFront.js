@@ -101,7 +101,7 @@ function bottomCardDisplay(tierTitle, tierDescription, tierDescriptionTwo, tierI
             >
                 {tierDescriptionTwo}
             </h4>
-            <img src={tierIcon} height="190px" width="190px"
+            <img src={tierIcon} height="190px" width="190px" alt=" "
                 style={{
                     position: 'relative',
                     top: -180,

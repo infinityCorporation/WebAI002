@@ -1,11 +1,7 @@
 import * as React from 'react';
 import './Home.css';
-import { auth } from '../auth/firebase.js';
 
 export default function Home() {
-
-  console.log(auth.currentUser);
-  const user = auth.currentUser;
 
   return(
     <div className='app'>

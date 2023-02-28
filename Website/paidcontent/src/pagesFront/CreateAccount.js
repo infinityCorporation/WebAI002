@@ -50,14 +50,6 @@ export default function CreateAccount() {
             });
     };
 
-    const signIn = () => {
-        return(
-            <>
-                <Navigate to="/createAccount" />
-            </>
-        )
-    }
-
     return(
         <div>
             { redirect ? (

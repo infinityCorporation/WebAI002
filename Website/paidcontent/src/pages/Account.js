@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState, useCallback, useReducer, useEffect } from 'react';
-import { signInWithEmailAndPassword, sendEmailVerification, updateProfile, signOut, createUserWithEmailAndPassword, updateCurrentUser } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../auth/firebase.js'
-import { Link, Outlet } from 'react-router-dom'
-import { collection, addDoc, getDoc, setDoc, doc } from 'firebase/firestore';
+import { Outlet } from 'react-router-dom'
+import { getDoc, setDoc, doc } from 'firebase/firestore';
 import './Account.css';
 
 
@@ -55,6 +55,12 @@ export default function Account() {
                         ...prevState,
                         userAuth: null,
                         accCreate: action.create
+                    }
+                default:
+                    return {
+                        ...prevState,
+                        userAuth: null,
+                        accCreate: false
                     }
             }
         },

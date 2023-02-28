@@ -1,7 +1,5 @@
 import * as React from 'react'
 import { Outlet, Link } from 'react-router-dom';
-import { StyledLink } from './navStyle';
-import { TitleLink } from '../pagesFront/StyledLink';
 import './Layout.css';
 
 export default function Layout() {

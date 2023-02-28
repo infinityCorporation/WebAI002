@@ -64,6 +64,7 @@ export default function BottomLinks() {
             >
                 Legal
             </BtmLink>
+            <Outlet />
         </div>
     )
 }

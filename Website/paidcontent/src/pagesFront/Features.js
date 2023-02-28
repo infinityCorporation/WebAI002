@@ -108,6 +108,7 @@ function cardDisplay(title, description, src) {
                 src={src}
                 height="200" 
                 width="200"
+                alt=" "
                 style={{
                     position: 'relative',
                     top: 40
@@ -118,32 +119,6 @@ function cardDisplay(title, description, src) {
             </h2>
             <h4 style={{position: 'relative', top: 40, color: 'white', fontWeight: 200, margin: '5%'}}>
                 {description}
-            </h4>
-        </div>
-    )
-}
-
-function bottomCardDisplay(featTitle, featDescription, featIcon) {
-    return(
-        <div 
-            className='botCardDiv'
-            style={{
-                width: '75%',
-                height: 350,
-                backgroundColor: "#333333",
-                color: 'white',
-                position: 'relative',
-                left: '12.5%',
-                borderRadius: 15,
-                fontFamily: 'Inter',
-                padding: 15
-            }}
-        >
-            <h2>
-                {featTitle}
-            </h2>
-            <h4>
-                {featDescription}
             </h4>
         </div>
     )
