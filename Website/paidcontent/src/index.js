@@ -19,7 +19,9 @@ import PricingFront from './pagesFront/PricingFront';
 import About from './pagesFront/About';
 import Legal from './pagesFront/Legal';
 import CreateAccount from './pagesFront/CreateAccount';
-import { auth, db } from './auth/firebase.js';
+import PersonalCheckout from './pagesFront/PersonalCheckout';
+import SignIn from './pagesFront/SignIn';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -32,6 +34,8 @@ root.render(
         <Route path="/features" element={<Features /> } />
         <Route path="/pricing" element={<PricingFront /> } />
         <Route path="/createAccount" element={<CreateAccount />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/personal" element={<PersonalCheckout />} />
         <Route path="/about" element={<About />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/customerPortal" element={<Layout />} >

@@ -1,0 +1,75 @@
+#signInDiv {
+    height: 800px;
+    padding: 0px;
+}
+
+#googleAuthDiv1 {
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: #796e87;
+    position: relative;
+    left: 35%;
+    width: 30%;
+    height: 40%;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+#signInTitle {
+    font-family: 'Inter';
+    text-align: center;
+}
+
+#emailTitle {
+    color: white;
+}
+
+#email {
+    background-color: white;
+    width: 270px;
+    height: 35px;
+    border: 2.5px solid black;
+    border-radius: 12.5px;
+    font-size: 19px;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+#passTitle {
+    color: white;
+}
+
+#pass {
+    background-color: white;
+    width: 270px;
+    height: 35px;
+    border: 2.5px solid black;
+    border-radius: 12.5px;
+    font-size: 19px;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+#buttonIn {
+    position: relative;
+    top: 20px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #4AD388;
+    font-family: 'Inter';
+    font-size: 18px;
+}
+
+#buttonIn:active {
+    position: relative;
+    top: 20px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    font-family: 'Inter';
+    font-size: 18px;
+    background-color: #2a8460;
+}
