@@ -2,22 +2,22 @@ import * as React from 'react';
 import './PersonalCheckout.css';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState } from 'react';
+import StripeContainer from './StripeContainer.js';
 
 export default function PersonalCheckout() {
     const [loaded, setLoaded] = useState(false);
     const [data, setData] = useState();
-
-    const elements = {};
-
+    const [key, setKey] = useState();
+    const cardId = 'ic_1ITi6XKYfU8ZP6raDAXem8ql';
+    
     const stripeFunc = async () => { 
         await loadStripe('pk_test_51MZTBGLeql5JZZEePBXMl6f49nwS9LTvgaKOxoWesTGvNbEjq2t6VHWcG8HmneuBUzCMioMDagAEmc1WCfrz3cLE00DV4Q5ikd')
-            .then(async () => {
-                await fetch("https://aiserver.herokuapp.com/persCheckout", {
+            .then(async (stripe) => {
+                console.log(stripe);
+
+                await fetch("https://aiserver.herokuapp.com/secret", {
                     method: "GET",
-                    headers: {
-                        'Content-type': 'application/json'
-                    },
-                    mode: 'cors'
+                    
                 })
                     .then((response) => response.json())
                     .then((data) => {
@@ -27,33 +27,53 @@ export default function PersonalCheckout() {
                     .catch((err) => {
                         console.log({ message: err.message });
                     });
-            })
-            .then((stripe) => {
-                elements = stripe.elements({
-                    clientSecret: 'sk_test_51MZTBGLeql5JZZEep4i4uudpBRJMakqOKZjEWRNvcfmPMOEKKMgCorhzNbr5vpC2m54leCfbMAZ9MuRGoOhuvO2x005jPIqTf5'
+
+                console.log(stripe);
+
+                const elements = stripe.elements({
+                    clientSecret: data.client_secret
                 });
+
+                const nonceResult = stripe.createEphemeralKeyNonce({
+                    issuingCard: cardId,
+                });
+
+                const nonce = nonceResult.nonce;
+
+                fetch('https://aiserver.herokuapp.com/ephemeral-keys', {
+                    method: 'POST',
+                    body: `issuing_card=${cardId}&nonce=${nonce}`,
+                  })
+                  .then((response) => response.json())
+                  .then((response) => {
+                    setKey(response.ephemeralKeySecret);
+                  })
+                  .then(() => {
+                    console.log("first step is complete and the key has been called");
+                  })
+                  .catch((err) => {
+                    console.log({ message: err.message });
+                  });
             })
-            .then(() => setLoaded(true))
+            .then( () => {
+                //elements.update({locale: 'fr'});
+
+                /*
+                const address = elements.create('address', {
+                    mode: 'billing',
+                })
+                const paymentElement = elements.create('payment')
+                paymentElement.update({business: {name: 'Array Assistant'}});
+                const linkAuthElement = elements.create('linkAuthentication');
+                */
+
+                //Create a nonce
+                
+            })
             .then(() => console.log("Done loading stripe, loaded successfully."))
             .catch((err) => {
                 console.log({ message: err.message });
             });
-    }
-
-
-    if (loaded) {
-        /*
-        const elements = stripe.elements({
-            clientSecret: 'sk_test_51MZTBGLeql5JZZEep4i4uudpBRJMakqOKZjEWRNvcfmPMOEKKMgCorhzNbr5vpC2m54leCfbMAZ9MuRGoOhuvO2x005jPIqTf5'
-        });
-        */
-
-        elements.update({locale: 'fr'});
-
-        const paymentElement = elements.create('payment')
-        paymentElement.update({business: {name: 'Array Assistant'}});
-
-        const linkAuthElement = elements.creat('linkAuthentication');
     }
 
     return(
@@ -61,11 +81,9 @@ export default function PersonalCheckout() {
             <h3>
                 This is the checkout page for the personal account.
             </h3>
-            <button
-                onClick={() => stripeFunc()}
-            >
-                Click here to get stripe stuff
-            </button>
+            <div>
+                <StripeContainer />
+            </div>
             <script src="https://js.stripe.com/v3/"></script>
             <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
         </div>
