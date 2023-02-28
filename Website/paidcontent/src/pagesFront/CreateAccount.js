@@ -54,7 +54,7 @@ export default function CreateAccount() {
         <div>
             { redirect ? (
                 <>
-                    <Navigate to="/personal" />
+                    <Navigate to="/products" />
                 </>
             ): (
                 <>

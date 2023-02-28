@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './PaymentForm.css';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
+import { Navigate } from 'react-router-dom';
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -87,6 +88,7 @@ export default function PaymentForm() {
                     <h2>
                         Thanks for purchasing your subscription!
                     </h2>
+                    <Navigate to="/customerPortal" />
                 </>
             )}
         </>

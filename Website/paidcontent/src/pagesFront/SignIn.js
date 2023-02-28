@@ -99,7 +99,7 @@ export default function SignIn() {
                 </>
             ) : (
                 <>
-                    <Navigate to="/personal" />
+                    <Navigate to="/products" />
                 </>
             )}
             <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
