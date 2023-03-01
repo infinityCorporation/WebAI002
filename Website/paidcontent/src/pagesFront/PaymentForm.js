@@ -44,7 +44,7 @@ export default function PaymentForm() {
         if (!error) {
             try {
                 const {id} = paymentMethod;
-                const response = await axios.post("http://aiserver.herokuapp.com/payment", {
+                const response = await axios.post("https://aiserver.herokuapp.com/payment", {
                     amount: 999,
                     id: id,
                     customer: auth.currentUser.email
