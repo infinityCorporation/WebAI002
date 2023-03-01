@@ -4,6 +4,7 @@ import './PaymentForm.css';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
+import { auth } from '../auth/firebase';
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -45,7 +46,8 @@ export default function PaymentForm() {
                 const {id} = paymentMethod;
                 const response = await axios.post("http://aiserver.herokuapp.com/payment", {
                     amount: 999,
-                    id: id
+                    id: id,
+                    customer: auth.currentUser.email
                 });
 
                 if (response.data.success) {
@@ -72,7 +74,7 @@ export default function PaymentForm() {
                             <div
                                 className="FormRow"
                             >
-                                <CardElement options={CARD_OPTIONS} />
+                                <CardElement options={CARD_OPTIONS} style={{ fontFamily: 'Inter'}} />
                             </div>
                         </fieldset>
                         <button

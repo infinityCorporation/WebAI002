@@ -6,12 +6,18 @@ import './PaymentWall.css';
 const perTitle = "Personal";
 const perDes = "This is the personal account";
 const perPrice = "$9.99";
-const perLink= "/personal";
+const perLink = "/personal";
+
+const proTitle = "Professional";
+const proDes = "This is the professional account";
+const proPrice = "$24.99";
+const proLink = "/professional";
 
 export default function PaymentWall() {
   return (
     <div>
         {displayProduct(perTitle, perDes, perPrice, perLink)}
+        {displayProduct(proTitle, proDes, proPrice, proLink)}
     </div>
   )
 }
