@@ -7,7 +7,7 @@ export default function Home() {
     <div className='app'>
       <div className='titleArea'>
         <h1 className='title'>
-          Welcome to Array Assistant
+          Array Assistant
         </h1>
       </div>
       <div className='intro'>

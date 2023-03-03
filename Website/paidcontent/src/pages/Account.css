@@ -1,12 +1,12 @@
 .mainAcc {
-    background-color: #F5F5F5;
+    background-color: white;
     height: 100%;
     width: 80%;
     position: fixed;
     top: 0px;
     left: 20%;
     margin-left: 2px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
     align-items: center;
 }
@@ -19,7 +19,7 @@
     left: 35%;
     width: 30%;
     height: 50%;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
 }
 
 .googleAuthDiv2 {
@@ -30,7 +30,7 @@
     left: 35%;
     width: 30%;
     height: 64%;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
 }
 
 .nameTitle {
@@ -44,7 +44,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
 }
 
@@ -59,7 +59,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
 }
 
@@ -74,7 +74,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
 }
 
@@ -86,7 +86,7 @@
     border-radius: 20px;
     border: 3px solid black;
     background-color: #4AD388;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     font-size: 18px;
 }
 
@@ -97,7 +97,7 @@
     height: 45px;
     border-radius: 20px;
     border: 3px solid black;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     font-size: 18px;
     background-color: #2a8460;
 }
@@ -110,7 +110,7 @@
     border-radius: 20px;
     border: 3px solid black;
     background-color: #4AD388;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     font-size: 18px;
 }
 
@@ -122,7 +122,7 @@
     border-radius: 20px;
     border: 3px solid black;
     background-color: #2a8460;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     font-size: 18px;
 }
 
@@ -150,6 +150,11 @@
     left: 5%;
 }
 
+.requestDisplay {
+    position: relative;
+    left: 5%;
+}
+
 .signOut {
     position: relative;
     top: 40px;
@@ -158,7 +163,7 @@
     border-radius: 20px;
     border: 3px solid black;
     background-color: #4AD388;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     font-size: 18px;
     margin-left: 10px;
 }
@@ -171,7 +176,33 @@
     border-radius: 20px;
     border: 3px solid black;
     background-color: #2a8460;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.upgrade {
+    position: relative;
+    top: 40px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #4AD388;
+    font-family: 'Inter';
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.upgrade:active {
+    position: relative;
+    top: 40px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #2a8460;
+    font-family: 'Inter';
     font-size: 18px;
     margin-left: 10px;
 }

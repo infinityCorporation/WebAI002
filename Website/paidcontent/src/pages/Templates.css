@@ -1,18 +1,18 @@
 .mainTemp {
-    background-color: #F5F5F5;
+    background-color: white;
     height: 100%;
     width: 80%;
     position: fixed;
     top: 0px;
     left: 20%;
     margin-left: 2px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
     align-items: center;
 }
 
 .desTemp {
-    width: 98%;
+    width: 95%;
     position: relative;
-    left: 1%;
+    left: 2.5%;
 }

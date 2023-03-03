@@ -1,5 +1,5 @@
 .app {
-  background-color: #F5F5F5;
+  background-color: white;
   height: 100%;
   width: 80%;
   position: fixed;
@@ -13,10 +13,10 @@
 .titleArea {
   text-align: center;
   justify-content: baseline;
-  width: 50%;
+  width: 40%;
   height: 6%;
   position: relative;
-  left: 25%;
+  left: 30%;
   top: 50px;
   border-bottom: 2px solid black;
 }

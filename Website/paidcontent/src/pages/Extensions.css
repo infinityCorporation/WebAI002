@@ -1,12 +1,12 @@
-.main {
-  background-color: #F5F5F5;
+#mainExt {
+  background-color: white;
   height: 100%;
   width: 80%;
   position: fixed;
   top: 0px;
   left: 20%;
   margin-left: 2px;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   text-align: center;
 }
 

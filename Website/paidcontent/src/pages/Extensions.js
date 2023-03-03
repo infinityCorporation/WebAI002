@@ -3,7 +3,7 @@ import "./Extensions.css";
 
 export default function Extensions() {
     return(
-        <div className='main'>
+        <div id='mainExt'>
             <div className='titleDiv'>
             <h2 className='title'>
                 Extensions
@@ -48,7 +48,7 @@ export default function Extensions() {
                     </div>
                 </div>
             </div>
-
+            <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
         </div>
     )
 }

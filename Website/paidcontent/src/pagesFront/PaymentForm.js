@@ -14,7 +14,7 @@ const CARD_OPTIONS = {
             iconColor: "#4ad388",
             color: "#4ad388",
             fontWeight: 500,
-            fontFamily: 'Inter',
+            fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
             fontSize: "16px",
             fontSmoothing: "antialiased",
             ":-webkit-autofill": { color: "#fce883" },
@@ -82,12 +82,13 @@ export default function PaymentForm() {
                                 className="FormRow"
                             >
                                 <CardElement options={CARD_OPTIONS} style={{ fontFamily: 'Inter'}} />
+                                <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
                             </div>
                         </fieldset>
                         <button
                             className='buyButton'
                         >
-                            Pay
+                            Purchase
                         </button>
                         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
                     </form>

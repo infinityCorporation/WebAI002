@@ -1,12 +1,12 @@
-.main {
-    background-color: #F5F5F5;
+.mainPricing {
+    background-color: white;
     height: 100%;
     width: 80%;
     position: fixed;
     top: 0px;
     left: 20%;
     margin-left: 2px;
-    font-family: 'Roboto Mono';
+    font-family: 'Inter';
     text-align: center;
     align-items: center;
 }
@@ -15,6 +15,7 @@
     position: absolute;
     width: 30%;
     left: 35%;
+    height: 50;
     border-bottom: 2px solid black;
 }
 
@@ -22,66 +23,6 @@
     width: 100%;
     text-align: center;
     justify-content: center;
-    position: absolute;
-    top: 15%;
-}
-
-.freeSection {
-    width: 25%;
     position: relative;
-    left: 25%;
-    height: 300px;
-    border: 2px solid black;
-    border-right: none;
-    align-items: center;
-}
-
-.freeTitleDiv {
-    position: absolute;
-    height: 70px;
-    width: 100%;
-    justify-content: center;
-    border-bottom: 2px solid black;
-    background-color: #4AD388;
-}
-
-.freeTitle {
-    color: white;
-}
-
-.freeTraits {
-    position: absolute;
-    top: 70px;
-    text-align: center;
-    width: 100%;
-}
-
-.premiumSection {
-    width: 25%;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    height: 300px;
-    border: 2px solid black;
-    align-items: center;
-}
-
-.premiumTitleDiv {
-    position: absolute;
-    height: 70px;
-    width: 100%;
-    justify-content: center;
-    border-bottom: 2px solid black;
-    background-color: #4AD388;
-}
-
-.premiumTitle {
-    color: white;
-}
-
-.premiumTraits {
-    position: absolute;
-    top: 70px;
-    text-align: center;
-    width: 100%;
+    top: -5%;
 }

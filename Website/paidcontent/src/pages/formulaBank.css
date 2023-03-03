@@ -1,0 +1,16 @@
+.mainBank{
+    background-color: white;
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    top: 0px;
+    left: 20%;
+    margin-left: 2px;
+    font-family: 'Inter';
+    text-align: center;
+    align-items: center;
+}
+
+.titleBank{
+    color: 'black';
+}

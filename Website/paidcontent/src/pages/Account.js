@@ -2,10 +2,9 @@ import * as React from 'react';
 import { useState, useCallback, useReducer, useEffect } from 'react';
 import { signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../auth/firebase.js'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { getDoc, setDoc, doc } from 'firebase/firestore';
 import './Account.css';
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -174,6 +173,10 @@ export default function Account() {
             });
     });
 
+    const upgradeFunction = useCallback( async () => {
+        navigate('/products');
+    })
+
     return(
         <div className='mainAcc'>
             <div className='headerDiv'>
@@ -275,6 +278,9 @@ export default function Account() {
                                 <h4 className='subDisplay'>
                                     { readyUI ? `Subscription: ${userInfo.userSubscription}` : `Subscription: Free Plan` }
                                 </h4>
+                                <h4 className='requestDisplay'>
+                                    Requests: - 
+                                </h4>
                             </div>
                             <button 
                                 className='signOut'
@@ -282,12 +288,19 @@ export default function Account() {
                             >
                                 Sign Out
                             </button>
+                            <button
+                                className='upgrade'
+                                onClick={() => upgradeFunction()}
+                            >
+                                Upgrade
+                            </button>
                         </h3>
                         
                     </div>
                     <Outlet />
                 </>
             )}
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
         </div>
     )
 };

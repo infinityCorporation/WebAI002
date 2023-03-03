@@ -7,7 +7,7 @@
   left: 20%;
   top: 0px;
   margin-left: 2px;
-  background-color: #F5F5F5;
+  background-color: white;
 }
 
 .mainContainer {
@@ -16,7 +16,7 @@
   width: 95%;
   position: absolute;
   left: 5%;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
 }
 
 .titleSection {
@@ -26,6 +26,7 @@
   top: 20px;
   justify-content: center;
   text-align: left;
+  font-family: 'Inter';
 }
 
 .mainTitle {
@@ -53,7 +54,7 @@
   border-width: 2px;
   border-color: black;
   background-color: white;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 19px;
 }
 
@@ -66,7 +67,7 @@
   border-width: 2px;
   border-color: black;
   background-color: white;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 19px;
   margin-left: 5px;
 }
@@ -85,7 +86,7 @@
   width: 400px;
   position: relative;
   top: -10px;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 17px;
   border-width: 2px;
   border-radius: 4px;
@@ -104,7 +105,7 @@
   border-width: 2px;
   border-color: black;
   background-color: white;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 18px;
   position: relative;
   top: -10px;
@@ -117,7 +118,7 @@
   border-width: 2px;
   border-color: black;
   background-color: #D6D6D6;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 18px;
   position: relative;
   top: -10px;
@@ -136,11 +137,37 @@
   height: 125px;
   width: 400px;
   justify-content: top;
-  font-family: 'Roboto Mono';
+  font-family: 'Inter';
   font-size: 17px;
   border-width: 2px;
   border-radius: 4px;
   border-color: black;
+  position: relative;
+  top: -10px;
+}
+
+#copyButton {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  background-color: white;
+  font-family: 'Inter';
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+}
+
+#copyButton:active {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  background-color: #D6D6D6;
+  font-family: 'Inter';
+  font-size: 18px;
   position: relative;
   top: -10px;
 }

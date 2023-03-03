@@ -66,12 +66,20 @@ export default function FormulaGen() {
         console.log("error: request does not exist");
       }
     });
+
+    const copyFunction = useCallback( async () => {
+      navigator.clipboard.writeText(data.choices[0].text);
+    });
   
     return (
       <div className="formulaMain">
         <div className='mainContainer'>
             <div className='titleSection'>
-            <h2 className='mainTitle'>
+            <h2 className='mainTitle'
+              style={{
+                fontFamily: 'Inter'
+              }}
+            >
                 Formula Creator
             </h2>
             </div>
@@ -137,17 +145,26 @@ export default function FormulaGen() {
                 Formula Output:
             </h4>
             <textarea 
-                type="text" 
-                placeholder='Input something above!'
-                value={ ready ?  data.choices[0].text : null}
-                rows='4'
-                cols='50'
-                className='mainOutput'
-                readOnly
-                />
+              type="text" 
+              placeholder='Input something above!'
+              value={ ready ?  data.choices[0].text : null}
+              rows='4'
+              cols='50'
+              className='mainOutput'
+              readOnly
+            />
+              <div>
+                <button id="copyButton"
+                  onClick={() => {
+                    copyFunction()
+                  }}
+                >
+                  Copy Formula
+                </button>
+              </div>
             </div>
         </div>
-        <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
       </div>
     );
 }

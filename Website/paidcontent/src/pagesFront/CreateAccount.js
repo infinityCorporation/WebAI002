@@ -63,23 +63,7 @@ export default function CreateAccount() {
             });
     };
 
-    const checkAuth = useCallback( async () => {
-        const customerGet = await getDoc(doc(db, "customers", auth.currentUser.uid));
-        const customerData = customerGet.data();
-        const sub = customerData.userSubscription;
-
-        if (sub === "Paid") {
-            navigate('/customerPortal');
-        } else {
-            navigate("/products");
-        }
-    });
-
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            checkAuth();
-        } 
-    });
+    
 
     return(
         <div>

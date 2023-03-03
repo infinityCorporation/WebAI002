@@ -13,6 +13,7 @@ export default function Templates() {
                 are prebuilt with the commands and formulas you need. Additionally,
                 they can be customized to fit the look you need!
             </h4>
+            <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
         </div>
     )
 }

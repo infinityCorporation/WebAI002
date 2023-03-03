@@ -28,7 +28,7 @@ export default function PricingFront() {
                     className='pricingContentDiv'
                     style={{
                         width: '100%',
-                        height: 1000
+                        height: 750
                     }}
                 >
                     <PricingComponent />

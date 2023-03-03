@@ -3,8 +3,8 @@ import './formulaBank.css';
 
 export default function FormulaBank() {
     return(
-        <div className='main'>
-            <h2 className='title'>
+        <div className='mainBank'>
+            <h2 className='titleBank'>
                 Formula Bank
             </h2>
         </div>

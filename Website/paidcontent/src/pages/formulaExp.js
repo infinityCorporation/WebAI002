@@ -86,6 +86,6 @@ export default function FormulaExp() {
                     />
                 </div>
         </div>
-        <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
       </div>
 )};
