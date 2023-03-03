@@ -1,16 +1,19 @@
 import * as React from 'react';
 import './SignIn.css';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Navigate } from 'react-router-dom';
-import { auth } from '../auth/firebase.js';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { Navigate, Link, Outlet, useNavigate } from 'react-router-dom';
+import { auth, db } from '../auth/firebase.js';
 import { useState, useCallback } from 'react';
-import { Link, Outlet } from 'react-router-dom';
 import BottomLinks from './BottomLinks';
+import { getDoc, doc } from 'firebase/firestore';
 
 export default function SignIn() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [redirect, setRedirect] = useState(false);
+    const [secRe, setSecRe] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleEmail = useCallback((event) => {
         setEmail(event.target.value);
@@ -22,6 +25,15 @@ export default function SignIn() {
 
     const signIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
+            .then(async () => {
+                const customerGet = await getDoc(doc(db, "customers", auth.currentUser.uid));
+                const customerData = customerGet.data();
+                const sub = customerData.userSubscription;
+                if (sub === "Paid") {
+                    setSecRe(true);
+                    console.log("true");
+                }
+            })
             .then(() => {
                 setRedirect(true);
             })
@@ -30,6 +42,24 @@ export default function SignIn() {
             });
     };
 
+    const checkAuth = useCallback( async () => {
+        const customerGet = await getDoc(doc(db, "customers", auth.currentUser.uid));
+        const customerData = customerGet.data();
+        const sub = customerData.userSubscription;
+
+        if (sub === "Paid") {
+            navigate('/customerPortal');
+        } else {
+            navigate("/products");
+        }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            checkAuth();
+        } 
+    });
+    
     return(
         <div id="signInDiv">
             { !redirect ? (
@@ -99,7 +129,11 @@ export default function SignIn() {
                 </>
             ) : (
                 <>
-                    <Navigate to="/products" />
+                    { !secRe ? (
+                        <Navigate to="/products" />
+                    ) : (
+                        <Navigate to="/customerPortal" />
+                    )}
                 </>
             )}
             <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>

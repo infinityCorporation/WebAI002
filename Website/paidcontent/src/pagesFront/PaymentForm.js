@@ -4,7 +4,8 @@ import './PaymentForm.css';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
-import { auth } from '../auth/firebase';
+import { auth, db } from '../auth/firebase';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -43,15 +44,21 @@ export default function PaymentForm() {
 
         if (!error) {
             try {
+                const customer = await getDoc(doc(db, "customers", auth.currentUser.uid))
+                const customerData = customer.data();
+
                 const {id} = paymentMethod;
                 const response = await axios.post("https://aiserver.herokuapp.com/payment", {
-                    amount: 999,
                     id: id,
-                    customer: auth.currentUser.email
+                    customer: customerData.customerId
                 });
 
                 if (response.data.success) {
-                    console.log("Successful Payment");
+                    console.log(response.data.id);
+                    await updateDoc(doc(db, "customers", auth.currentUser.uid), {
+                        userSubscription: "Paid",
+                        subscriptionId: response.data.id
+                    })
                     setSuccess(true);
                 };
             } catch (err) {

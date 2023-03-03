@@ -5,6 +5,7 @@ import { auth, db } from '../auth/firebase.js'
 import { Outlet } from 'react-router-dom'
 import { getDoc, setDoc, doc } from 'firebase/firestore';
 import './Account.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -16,6 +17,8 @@ export default function Account() {
     const [name, setName] = useState("");
     const [userInfo, setUserInfo] = useState();
     const [readyUI, setReadyUI] =useState(false);
+
+    const navigate = useNavigate();
 
     const [state, dispatch] = useReducer(
         (prevState, action) => {
@@ -167,7 +170,7 @@ export default function Account() {
             .then(() => {
                 setEmail("");
                 setPass("");
-                dispatch({ type: "SIGN_OUT" });
+                navigate("/signIn");
             });
     });
 

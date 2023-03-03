@@ -15,7 +15,7 @@ export default function Home() {
             From formula generators and explainers to data cleaners to spreadsheet plugins, we have everything necessary to make your work easier!
           </h3>
         </div>
-      <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel='stylesheet'/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
     </div>
   )
 }
