@@ -83,7 +83,7 @@ export default function FormulaExp() {
                     cols='50'
                     className='mainOutput'
                     readOnly
-                    />
+                    /> 
                 </div>
         </div>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>

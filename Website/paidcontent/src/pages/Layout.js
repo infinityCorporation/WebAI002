@@ -78,6 +78,55 @@ export default function Layout() {
                             </h3>
                         </SideLink>
                     </li>
+                    <h2 className='codeSection'
+                        style={{
+                            fontFamily: 'Inter',
+                        }}
+                    >
+                        Code
+                    </h2>
+                    <li>
+                        <SideLink
+                            to='/customerPortal/formulaBank'
+                            className='formBank'
+                        >
+                            <h3 className='formBankTitle'
+                                style={{
+                                    fontFamily: 'Inter',
+                                }}
+                            >
+                                Python
+                            </h3>
+                        </SideLink>
+                    </li>
+                    <li>
+                        <SideLink
+                            to='/customerPortal/formulaBank'
+                            className='formBank'
+                        >
+                            <h3 className='formBankTitle'
+                                style={{
+                                    fontFamily: 'Inter',
+                                }}
+                            >
+                                SQL + R
+                            </h3>
+                        </SideLink>
+                    </li>
+                    <li>
+                        <SideLink
+                            to='/customerPortal/formulaBank'
+                            className='formBank'
+                        >
+                            <h3 className='formBankTitle'
+                                style={{
+                                    fontFamily: 'Inter',
+                                }}
+                            >
+                                Sheet Automation
+                            </h3>
+                        </SideLink>
+                    </li>
                     <h2 className='addonsSection'
                         style={{
                             fontFamily: 'Inter',

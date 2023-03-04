@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TitleLink = styled(Link)`
     text-decoration: none;
-    font-family: Inter;
+    font-family: Helvetica, Arial, sans-serif;
     color: black;
     position: relative;
     left: 25px;
@@ -13,9 +13,12 @@ const TitleLink = styled(Link)`
 
 const SubLink = styled(Link)`
     text-decoration: none;
-    font-family: Inter;
+    font-family: Helvetica, Arial, sans-serif;
     color: black;
     justifyContent: center;
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
 export { TitleLink };

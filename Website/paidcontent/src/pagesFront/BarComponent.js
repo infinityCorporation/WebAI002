@@ -30,7 +30,8 @@ export default function BarNav() {
                     className='frontPage'
                     style={{
                         position: 'relative',
-                        left: 100
+                        left: 100,
+                        fontFamily: 'Helvetica, Arial, sans-serif'
                     }}
                 >
                     <h1>
@@ -44,7 +45,7 @@ export default function BarNav() {
                         width: '30%',
                         color: 'black',
                         position: 'relative',
-                        left: '70%',
+                        left: '62%',
                         top: -65,
                         display: 'inline-flex'
                     }}
@@ -74,6 +75,17 @@ export default function BarNav() {
                                 }}
                             >
                                 Pricing
+                            </h2>
+                        </SubLink>
+                        <SubLink
+                            to="/signIn"
+                        >
+                            <h2
+                                style={{
+                                    width: 150
+                                }}
+                            >
+                                Sign In
                             </h2>
                         </SubLink>
                         <SubLink

@@ -1,0 +1,45 @@
+<div 
+                    className='contentDiv'
+                    style={{
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        height: 700,
+                    }}
+                >
+                    <img src={Image} alt="MainVisual" width="500" height="200" 
+                        style={{
+                            position: 'relative',
+                            top: 300
+                        }}
+                    />
+                    <h1
+                        style={{
+                            textAlign: 'center',
+                            position: 'relative',
+                            top: 300,
+                            fontSize: 42,
+                        }}
+                    >
+                        <span style={{color: '#4ad388'}}>Spreadsheet Productivity</span> Boosted with <span style={{color: '#4ad388'}}>AI</span>
+                    </h1>
+                    <div 
+                        className='underline'
+                        style={{
+                            height: 1.5,
+                            width: '60%',
+                            backgroundColor: 'black',
+                            position: 'relative',
+                            top: 280,
+                            left: '20%'
+                        }}
+                    ></div>
+                    <h2
+                        id='waitlistTop'
+                        style={{
+                            position: 'relative',
+                            top: 265
+                        }}
+                    >
+                        Save Time, Do More.
+                    </h2>
+                </div>

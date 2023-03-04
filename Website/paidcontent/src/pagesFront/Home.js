@@ -6,10 +6,14 @@ import { useCallback, useState } from 'react';
 import { db } from '../auth/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import './Home.css';
+import RightArrow from './Icons/RightArrow.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomeFront() {
     const [submit, setSubmit] = useState(false);
     const [email, setEmail] = useState('');
+
+    const navigate = useNavigate();
 
     const valueHandler = useCallback((event) => {
         setEmail(event.target.value);
@@ -26,50 +30,91 @@ export default function HomeFront() {
     return(
         <div className='homeContainer'>
             <div className='pageContainer'>
-                <div 
-                    className='contentDiv'
+                <div id="frontPageDiv"
                     style={{
-                        justifyContent: 'center',
-                        textAlign: 'center',
-                        height: 700,
+                        position: 'relative',
+                        top: 100,
+                        width: '100%',
+                        height: 800,
+                        justifyContent: 'center'
                     }}
                 >
-                    <img src={Image} alt="MainVisual" width="500" height="200" 
+                    <div
                         style={{
+                            display: 'flex',
                             position: 'relative',
-                            top: 300
-                        }}
-                    />
-                    <h1
-                        style={{
-                            textAlign: 'center',
-                            position: 'relative',
-                            top: 300,
-                            fontSize: 42,
+                            top: 125,
+                            width: '100%',
+                            height: 600,
+                            justifyContent: 'center'
                         }}
                     >
-                        <span style={{color: '#4ad388'}}>Spreadsheet Productivity</span> Boosted with <span style={{color: '#4ad388'}}>AI</span>
-                    </h1>
-                    <div 
-                        className='underline'
-                        style={{
-                            height: 1.5,
-                            width: '60%',
-                            backgroundColor: 'black',
-                            position: 'relative',
-                            top: 280,
-                            left: '20%'
-                        }}
-                    ></div>
-                    <h2
-                        id='waitlistTop'
-                        style={{
-                            position: 'relative',
-                            top: 265
-                        }}
-                    >
-                        Save Time, Do More.
-                    </h2>
+                        <div id="frontTextDiv"
+                            style={{
+                                width: '45%',
+                            }}
+                        >
+                            <h1 style={{ width: "80%"}}>
+                                Supercharge Your <span style={{color: '#4ad388', fontSize: 45}}>Spreadsheets</span> with <span style={{ color: "#4ad388", fontSize: 45}}>AI</span>.
+                            </h1>
+                            <h3 
+                                style={{ 
+                                    fontSize:25, 
+                                    width: '60%',
+                                    position: 'relative',
+                                    top: 12
+                                }}
+                            >
+                                The AI-Driven Partner for Spreadsheet Productivity. <br/> Save <span style={{ color: '#0097e3' }}>Time</span>. Do <span style={{ color: "#0097e3" }}>More</span>.
+                            </h3>
+                            <button className='startButtonText'
+                                style={{
+                                    border: 'none',
+                                    color: 'black',
+                                    backgroundColor: '#4ad388',
+                                    borderRadius: 10,
+                                    width: 185,
+                                    height: 50,
+                                    fontSize: 21,
+                                    fontFamily: 'Helvetica, Arial, sans-serif',
+                                    justifyContent: 'center',
+                                    display: 'flex',
+                                    position: 'relative',
+                                    top: 7
+                                }}
+                                onClick={() => {
+                                    navigate("/createAccount");
+                                }}
+                            >
+                                <h5
+                                    style={{
+                                        position: 'relative',
+                                        top: -17.5,
+                                        fontSize: 19,
+                                        marginRight: 5
+                                    }}
+                                >
+                                    Join Today 
+                                </h5>
+                                <img src={RightArrow} alt="icon" height="30" width="50" 
+                                    style={{ 
+                                        position: 'relative', 
+                                        top: 13.5,
+                                    }}
+                                />
+                            </button>
+                        </div>
+                        <div id="frontContentDiv"
+                            style={{
+                                border: '1px solid grey',
+                                height: 325,
+                                width: '37%',
+                                backgroundColor: 'black',
+                            }}
+                        >
+                            
+                        </div>
+                    </div>
                 </div>
                 <div 
                     className='signUpForm'

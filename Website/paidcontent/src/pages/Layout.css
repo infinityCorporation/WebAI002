@@ -53,12 +53,12 @@ list-style: none;
 .homeTitle {
     position: relative;
     left: 15px;
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     color: #3C3C3C;
 }
 
 .formSection {
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     height: 40px;
 }
 
@@ -79,12 +79,12 @@ list-style: none;
 .formGenTitle {
 position: relative;
 left: 15px;
-font-family: 'Space Grotesk';
+font-family: 'Inter';
 color: #3C3C3C;
 }
 
 .formExp {
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     text-align: left;
     width: 100%;
     height: 60px;
@@ -100,12 +100,12 @@ color: #3C3C3C;
 .formExpTitle {
     position: relative;
     left: 15px;
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     color: #3C3C3C;
 }
 
 .formBank {
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     text-align: left;
     width: 100%;
     height: 60px;
@@ -121,12 +121,17 @@ color: #3C3C3C;
 .formBankTitle {
     position: relative;
     left: 15px;
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     color: #3C3C3C;
 }
 
+.codeSection {
+    font-family: 'Inter';
+    height: 40px;
+}
+
 .addonsSection {
-    font-family: 'Space Grotesk';
+    font-family: 'Inter';
     height: 40px;
 }
 
