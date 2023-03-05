@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { TitleLink, SubLink } from './StyledLink';
+import { TitleLink, SubLink, SignLink } from './StyledLink';
 import { Outlet } from 'react-router-dom';
-import logo from '../images/logoT.png';
+import logo from '../images/logoV.png';
+import './BarComponent.css';
 
 export default function BarNav() {
     return(
@@ -18,11 +19,11 @@ export default function BarNav() {
                     background: 'white'
                 }}
             >
-                <img src={logo} height="150px" width="150px" alt="logo"
+                <img src={logo} height="65px" width="65px" alt="logo"
                     style={{
                         position: 'absolute',
-                        top: -20,
-                        left: -20
+                        top: 17,
+                        left: 25
                     }}
                 />
                 <TitleLink
@@ -45,63 +46,76 @@ export default function BarNav() {
                         width: '30%',
                         color: 'black',
                         position: 'relative',
-                        left: '62%',
-                        top: -65,
+                        left: '68%',
+                        top: -45,
                         display: 'inline-flex'
                     }}
                 >
-    
-                        <SubLink
-                            to='/features'
-                            className='testPage'
+                        <div
+                            style={{
+                                position: 'relative',
+                                top: -10,
+                                width: 330,
+                                display: 'flex'
+                            }}
                         >
-                            <h2 
-                                className='testTitle'
-                                style={{
-                                    width: 150
-                                }}
+                            <SubLink
+                                to='/features'
+                                className='testPage'
                             >
-                                Features
-                            </h2>
-                        </SubLink>
-                        <SubLink
-                            to='/pricing'
-                            className='testPage'
+                                <h3 
+                                    className='testTitle'
+                                    style={{
+                                        width: 110
+                                    }}
+                                >
+                                    Features
+                                </h3>
+                            </SubLink>
+                            <SubLink
+                                to='/pricing'
+                                className='testPage'
+                            >
+                                <h3 
+                                    className='testTitle'
+                                    style={{
+                                        width: 100
+                                    }}
+                                >
+                                    Pricing
+                                </h3>
+                            </SubLink>
+                            <SubLink
+                                to="/signIn"
+                            >
+                                <h3
+                                    style={{
+                                        width: 100
+                                    }}
+                                >
+                                    Sign In
+                                </h3>
+                            </SubLink>
+                        </div>
+                        <div
+                            id="signUp"
                         >
-                            <h2 
-                                className='testTitle'
-                                style={{
-                                    width: 150
-                                }}
+                            <SignLink
+                                to="/createAccount"
+                                className='testPage'
                             >
-                                Pricing
-                            </h2>
-                        </SubLink>
-                        <SubLink
-                            to="/signIn"
-                        >
-                            <h2
-                                style={{
-                                    width: 150
-                                }}
-                            >
-                                Sign In
-                            </h2>
-                        </SubLink>
-                        <SubLink
-                            to="/createAccount"
-                            className='testPage'
-                        >
-                            <h2 
-                                className='testTitle'
-                                style={{
-                                    width: 175,
-                                    color: '#4AD388'
-                                }}
-                            >
-                                Sign Up
-                            </h2>
-                        </SubLink>
+                                <h2 
+                                    className='testTitle'
+                                    style={{
+                                        width: '100%',
+                                        position: 'relative',
+                                        top: -14
+                                    }}
+                                >
+                                    Sign Up
+                                </h2>
+                            </SignLink>
+                        </div>
 
                 </div>
                 <Outlet />

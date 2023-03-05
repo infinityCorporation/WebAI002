@@ -45,7 +45,7 @@ export default function HomeFront() {
                             position: 'relative',
                             top: 125,
                             width: '100%',
-                            height: 600,
+                            height: 500,
                             justifyContent: 'center'
                         }}
                     >
@@ -54,34 +54,22 @@ export default function HomeFront() {
                                 width: '45%',
                             }}
                         >
-                            <h1 style={{ width: "80%"}}>
-                                Supercharge Your <span style={{color: '#4ad388', fontSize: 45}}>Spreadsheets</span> with <span style={{ color: "#4ad388", fontSize: 45}}>AI</span>.
+                            <h1 style={{ width: "80%", fontSize: 42}}>
+                                Supercharge Your <span style={{color: '#4ad388', fontSize: 47}}>Spreadsheets</span> with <span style={{ color: "#4ad388", fontSize: 47}}>AI</span>.
                             </h1>
                             <h3 
                                 style={{ 
                                     fontSize:25, 
                                     width: '60%',
                                     position: 'relative',
-                                    top: 12
+                                    top: 12,
+                                    lineHeight: 1.25
                                 }}
                             >
-                                The AI-Driven Partner for Spreadsheet Productivity. <br/> Save <span style={{ color: '#0097e3' }}>Time</span>. Do <span style={{ color: "#0097e3" }}>More</span>.
+                                The AI-Driven Partner for Spreadsheet Productivity. <br/> Save <span style={{ color: '#008FFF' }}>Time</span>. Do <span style={{ color: "#008FFF" }}>More</span>.
                             </h3>
-                            <button className='startButtonText'
-                                style={{
-                                    border: 'none',
-                                    color: 'black',
-                                    backgroundColor: '#4ad388',
-                                    borderRadius: 10,
-                                    width: 185,
-                                    height: 50,
-                                    fontSize: 21,
-                                    fontFamily: 'Helvetica, Arial, sans-serif',
-                                    justifyContent: 'center',
-                                    display: 'flex',
-                                    position: 'relative',
-                                    top: 7
-                                }}
+                            <button
+                                id="signUpToday"
                                 onClick={() => {
                                     navigate("/createAccount");
                                 }}
@@ -107,112 +95,44 @@ export default function HomeFront() {
                         <div id="frontContentDiv"
                             style={{
                                 border: '1px solid grey',
-                                height: 325,
-                                width: '37%',
+                                height: 365,
+                                width: '39%',
                                 backgroundColor: 'black',
+                                position: 'relative',
+                                top: 20,
                             }}
                         >
                             
                         </div>
                     </div>
                 </div>
-                <div 
-                    className='signUpForm'
-                    id='waitlistForm'
-                    style={{
-                        width: '90%',
-                        height: 500,
-                        position: 'relative',
-                        top: 50,
-                        left: '5%',
-                        borderRadius: 15,
-                        margin: 0,
-                        backgroundColor: '#333333',
-                        color: 'white',
-                        textAlign: 'center',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <p
-                        style={{
-                            position: 'relative',
-                            top: '10%',
-                            fontSize: 45,
-                            fontWeight: 200
-                        }}
-                    >
-                        Array Assistant is Launching <span style={{color: '#4ad388'}}> Soon</span>!
-                    </p>
-                    <h2
-                        style={{
-                            width: '60%',
-                            position: 'relative',
-                            top: '12%',
-                            left: '20%',
-                            fontWeight: 300
-                        }}
-                    >
-                        <span style={{color: '#4ad388'}}>Until then... </span>Sign Up for our waiting list to get updated when we launch. You'll also get
-                        an exclusive promo code for a launch discount!
-                    </h2>
-                    { !submit ? (
-                    <>
-                        <input 
-                            type='text' 
-                            className='emailInput'
-                            placeholder='Email...'
-                            value={email}
-                            onChange={(event) => valueHandler(event)}
-                            style={{
-                                position: 'relative',
-                                top: '15%',
-                                borderRadius: 15,
-                                height: 40,
-                                width: 400,
-                                border: '1px solid white',
-                                fontFamily: 'Inter',
-                                fontSize: 20,
-                                textAlign: 'center'
-                            }}
-                        />
-                        <div
-                            style={{
-                                position: 'relative',
-                                top: '20%'
-                            }}
-                        >
-                            <button
-                                className='joinButton'
-                                onClick={() => {
-                                    setSubmit(!submit);
-                                    logEmail();
-                                }}
-                                style={{
-                                    borderRadius: 15,
-                                    height: 45,
-                                    width: 400,
-                                    border: '1px solid black',
-                                    fontFamily: 'Inter',
-                                    fontSize: 22.5,
-                                    backgroundColor: 'white'
-                                }}
-                            >
-                                Submit
-                            </button>
+                <div id="styledDiv">
+                    <div id="subFrontDiv">
+                        <h1 id="subHeaderOne">
+                            Revolutionize Your Workflow <span style={{ color: '#008fff' }}>Today</span>.
+                        </h1>
+                        <div style={{ display: 'flex', margin: 'auto', justifyContent: 'center', position: 'relative', top: 50 }}>
+                            <div>
+                                <div id="visualsOne">
+
+                                </div>
+                                <div id="visualsTwo">
+                                    <h2 id="quote" style={{ width: '75%'}}>
+                                        "All the Tools you need, at your Fingertips."
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="subTextDes" style={{ justifyContent: 'center'}}>
+                                <h3 style={{ position: 'relative', top: '20%'}}>
+                                    Create Formulas, Clean Data, Summarize Text, Explain Problems, Design Automations, and the list goes on! <br/> <br/>
+                                    Whether you are a professional, a student, or simply someone who uses spreadsheets, Array Assistant can help you!
+                                </h3>
+                            </div>
                         </div>
-                    </>
-                    ) : (
-                        <>
-                            <h2
-                                style={{
-                                    position: 'relative',
-                                    top: '20%'
-                                }}
-                            >
-                                Thanks For Signing Up!
-                            </h2>
-                        </>
-                    ) }
+                    </div>
+                </div>
+                <div id="thirdFrontDiv">
+
                 </div>
                 <div
                     className='infoSection'

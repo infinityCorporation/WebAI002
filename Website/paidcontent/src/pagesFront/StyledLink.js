@@ -15,11 +15,24 @@ const SubLink = styled(Link)`
     text-decoration: none;
     font-family: Helvetica, Arial, sans-serif;
     color: black;
-    justifyContent: center;
+    justify-content: center;
     &:hover {
         text-decoration: underline;
     }
 `;
 
-export { TitleLink };
-export { SubLink };
+const SignLink = styled(Link)`
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
+    justify-content: center;
+    &:hover {
+        background-color: #47aa74;
+    }
+    &:active{
+        color: white;
+    }
+`;
+
+export { TitleLink, SubLink };
+export { SignLink };

@@ -1,0 +1,16 @@
+#signUp {
+    width: 135px;
+    height: 40px;
+    background-color: #4ad388;
+    text-align: center;
+    border-radius: 6px;
+}
+
+#signUp:hover {
+    background-color: #47aa74;
+}
+
+#signUp:active {
+    background-color: #008FFF;
+}
+

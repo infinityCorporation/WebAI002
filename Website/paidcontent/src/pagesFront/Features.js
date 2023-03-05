@@ -31,7 +31,7 @@ export default function Features() {
                 >
                     <h1
                         style={{
-                            fontFamily: 'Inter',
+                            fontFamily: 'Helvetica, Arial, sans-serif',
                             fontSize: 50,
                         }}
                     >
@@ -46,7 +46,9 @@ export default function Features() {
                         position: 'relative',
                         justifyContent: 'center',
                         display: 'flex',
-                        background: 'white'
+                        background: 'white',
+                        position: 'relative',
+                        top: -25
                     }}
                 >
                     <div>
@@ -58,14 +60,6 @@ export default function Features() {
                     <div>
                         {cardDisplay(titleForm, desForm, form)}
                     </div>
-                </div>
-                <div
-                    style={{
-                        justifyContent: 'center',
-                        position: 'relative',
-                        top: -100
-                    }}
-                >
                 </div>
             </div>
             <div
@@ -83,7 +77,6 @@ export default function Features() {
                 <BottomLinks />
             </div>
             <BarNav />
-            <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
         </div>
     )
 }
@@ -95,11 +88,11 @@ function cardDisplay(title, description, src) {
                 height: 450,
                 width: 350,
                 position: 'relative',
-                borderRadius: 15,
-                fontFamily: 'Inter',
+                borderRadius: 10,
+                fontFamily: 'Helvetica, Arial, sans-serif',
                 textAlign: 'center',
                 border: '2px solid white',
-                margin: 15,
+                margin: 10,
                 alignItems: 'center',
                 background: '#333333'
             }}

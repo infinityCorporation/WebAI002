@@ -3,11 +3,90 @@
     font-weight: 100;
 }
 
-.startButtonText:focus {
+
+
+#signUpToday {
+    border: none;
+    color: black;
+    background-color: #4ad388;
+    border-radius: 10px;
+    width: 185px;
+    height: 50px;
+    font-size: 21px;
+    font-family: Helvetica, Arial, sans-serif;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    top: 22px
+}
+
+#signUpToday:hover {
     background-color: #47aa74;
+}
+
+#signUpToday:active {
+    background-color: #008FFF;
+    color: white;
 }
 
 input:focus::placeholder {
     color: transparent;
 }
 
+#styledDiv {
+    background-color: #D9EDDF;
+    transform: skewY(-6deg);
+    position: relative;
+    top: 50px;
+}
+
+#subFrontDiv {
+    width: 102%;
+    height: 600px;
+    position: relative;
+    top: -45px;
+    left: -1%;
+    text-align: center;
+    transform: skewY(6deg);
+}
+
+#subHeaderOne {
+    color: black;
+    position: relative;
+    top: 26px;
+    font-size: 35px;
+}
+
+#visualsOne {
+    height: 350px;
+    width: 400px;
+    background-color: black;
+    position: relative;
+    top: 50px;
+    left: 8%;
+}
+
+#visualsTwo {
+    height: 90px;
+    width: 380px;
+    background-color: #4ad388;
+    border-radius: 5px;
+    position: relative;
+    top: 0px;
+    left: 18%;
+    justify-content: center;
+    display: flex;
+}
+
+#subTextDes {
+    width: 35%;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 14%;
+}
+
+#thirdFrontDiv {
+    height: 300px;
+    width: 100%;
+}

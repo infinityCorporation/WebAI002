@@ -3,10 +3,10 @@
     height: 100%;
     width: 80%;
     position: fixed;
-    top: 0px;
+    top: 20px;
     left: 20%;
     margin-left: 2px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
     align-items: center;
 }
@@ -19,7 +19,7 @@
     left: 35%;
     width: 30%;
     height: 50%;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .googleAuthDiv2 {
@@ -30,7 +30,7 @@
     left: 35%;
     width: 30%;
     height: 64%;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .nameTitle {
@@ -44,7 +44,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -59,7 +59,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -74,7 +74,7 @@
     border: 2.5px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -130,6 +130,7 @@
     width: 90%;
     height: 40%;
     border: 2px solid black;
+    border-radius: 8px;
     position: relative;
     left: 5%;
     text-align: left;
@@ -195,6 +196,32 @@
 }
 
 .upgrade:active {
+    position: relative;
+    top: 40px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #2a8460;
+    font-family: 'Inter';
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.cancelSubscription {
+    position: relative;
+    top: 40px;
+    width: 270px;
+    height: 45px;
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: #4AD388;
+    font-family: 'Inter';
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.cancelSubscription:active {
     position: relative;
     top: 40px;
     width: 270px;
