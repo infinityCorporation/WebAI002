@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const BtmLink = styled(Link)`
     text-decoration: none;
-    fontSize: 15;
-    fontFamily: Inter;
+    font-size: 15;
+    font-family: Helvetica, Arial, sans-serif;
     color: white;
 `;
 

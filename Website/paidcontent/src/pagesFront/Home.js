@@ -137,11 +137,11 @@ export default function HomeFront() {
                 <div
                     className='infoSection'
                     style={{
-                        width: '100%',
+                        width: '102%',
                         height: 250,
                         position: 'relative',
                         top: 100,
-                        left: 0,
+                        left: '-1%',
                         color: 'white',
                         backgroundColor: '#1F1F1F' 
                     }}

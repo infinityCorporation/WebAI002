@@ -14,7 +14,7 @@ export default function BottomLinks() {
                 style={{
                     height: 20,
                     width: '150px',
-                    fontFamily: 'Inter',
+                    fontFamily: 'Helvetica, Arial, sans-serif',
                     fontSize: 18,
                     fontWeight: 200,
                     position: 'relative',

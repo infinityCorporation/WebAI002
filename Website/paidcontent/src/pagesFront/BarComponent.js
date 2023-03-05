@@ -16,7 +16,8 @@ export default function BarNav() {
                     top: 0,
                     left: 0,
                     justifyContent: 'center',
-                    background: 'white'
+                    background: 'white',
+                    overflow: 'hidden'
                 }}
             >
                 <img src={logo} height="65px" width="65px" alt="logo"
@@ -90,7 +91,7 @@ export default function BarNav() {
                             >
                                 <h3
                                     style={{
-                                        width: 100
+                                        width: 90
                                     }}
                                 >
                                     Sign In

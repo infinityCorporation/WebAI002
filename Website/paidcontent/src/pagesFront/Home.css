@@ -21,7 +21,7 @@
 }
 
 #signUpToday:hover {
-    background-color: #47aa74;
+    background-color: #2ebf6f;
 }
 
 #signUpToday:active {
@@ -58,12 +58,12 @@ input:focus::placeholder {
 }
 
 #visualsOne {
-    height: 350px;
-    width: 400px;
+    height: 335px;
+    width: 480px;
     background-color: black;
     position: relative;
     top: 50px;
-    left: 8%;
+    left: 5%;
 }
 
 #visualsTwo {
@@ -73,7 +73,7 @@ input:focus::placeholder {
     border-radius: 5px;
     position: relative;
     top: 0px;
-    left: 18%;
+    left: 32%;
     justify-content: center;
     display: flex;
 }
