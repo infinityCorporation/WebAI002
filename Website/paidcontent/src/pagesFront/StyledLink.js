@@ -34,5 +34,20 @@ const SignLink = styled(Link)`
     }
 `;
 
+const SwitchLink = styled(Link)`
+    text-decoration: none;
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: underline;
+        color: #008FFF;
+    }
+`;
+
 export { TitleLink, SubLink };
 export { SignLink };
+export { SwitchLink };

@@ -1,16 +1,20 @@
+:root {
+    height: 100%;
+}
+
 #signInDiv {
-    height: 800px;
+    height: 105%;
     padding: 0px;
 }
 
 #googleAuthDiv1 {
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     background-color: #333333;
     position: relative;
     left: 35%;
     width: 30%;
-    height: 40%;
+    height: 300px;
     font-family: 'Inter';
     text-align: center;
 }
@@ -58,19 +62,17 @@
     border-radius: 20px;
     background-color: #4AD388;
     font-family: 'Inter';
-    font-size: 18px;
-    color: white;
+    font-size: 19px;
+    font-weight: 500;
+    color: black;
+    border: none;
+}
+
+#buttonIn:hover {
+    background-color: #2ebf6f;
 }
 
 #buttonIn:active {
-    position: relative;
-    top: 20px;
-    width: 270px;
-    height: 45px;
-    border-radius: 20px;
-    border: 3px solid black;
-    font-family: 'Inter';
-    font-size: 18px;
-    background-color: #2a8460;
-    color: 'white';
+    background-color: #008FFF;
+    color: white;
 }

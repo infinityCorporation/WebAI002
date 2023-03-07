@@ -6,7 +6,7 @@
     top: 0px;
     font-family: Arial, Helvetica, sans-serif;
     border-right-width: 2px;
-    border-right-color: black;
+    border-right-color: grey;
     border-right-style: inset;
     background-color: white;
     margin-right: 2px;
@@ -16,11 +16,13 @@
     justify-content: center;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
+    width: 90%;
     height: 76px;
     position: relative;
     top: -30px;
-    background-color: #4AD388;
+    left: 5%;
+    background-color: white;
+    border-bottom: 1px solid grey
 }
 
 .headerTop {
@@ -46,7 +48,7 @@
 
 .list {
 position: relative;
-top: 35px;
+top: 30px;
 list-style: none;
 }
 
@@ -65,13 +67,16 @@ list-style: none;
 }
 
 .homeTitle {
-    position: relative;
-    left: 15px;
     font-family: Helvetica, Arial, sans-serif;
-    color: #3C3C3C;
+    color: black;
 }
 
 .formSection {
+    font-family: Helvetica, Arial, sans-serif;
+    height: 40px;
+}
+
+.textSection {
     font-family: Helvetica, Arial, sans-serif;
     height: 40px;
 }
@@ -240,13 +245,11 @@ color: #3C3C3C;
 
 .accountSpace {
     height: 80px;
-    width: 100%;
+    width: 90%;
     position: absolute;
     bottom: 0px;
-    left: 0px;
-    border-top-color: black;
-    border-top-width: 2px;
-    border-top-style: solid;
+    left: 5%;
+    border-top: 1px solid grey;
     justify-content: center;
     background-color: white;
 }

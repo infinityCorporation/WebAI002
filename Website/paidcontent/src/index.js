@@ -23,6 +23,7 @@ import PersonalCheckout from './pagesFront/PersonalCheckout';
 import SignIn from './pagesFront/SignIn';
 import PaymentWall from './pagesFront/PaymentWall';
 import CancelPage from './pagesFront/CancelPage';
+import ComingSoon from './pages/ComingSoon';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -53,6 +54,7 @@ root.render(
           <Route path="/customerPortal/pricing" element={<Pricing />} />
           <Route path="/customerPortal/docs" element={<Docs />} />
           <Route path="/customerPortal/account" element={<Account />} />
+          <Route path="/customerPortal/inDev" element={<ComingSoon />} />
         </Route>
       </Routes>
     </BrowserRouter>

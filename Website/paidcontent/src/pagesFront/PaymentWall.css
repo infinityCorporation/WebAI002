@@ -1,0 +1,25 @@
+:root {
+    width: 100%;
+}
+
+#prodPurchase {
+    border: none;
+    color: black;
+    background: #4ad388;
+    border-radius: 7px;
+    width: 185px;
+    height: 60px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    position: relative;
+    top: 70px;
+}
+
+#prodPurchase:hover {
+    background-color: #2ebf6f;
+}
+
+#prodPurchase:active {
+    background-color: #008FFF;
+    color: white;
+}

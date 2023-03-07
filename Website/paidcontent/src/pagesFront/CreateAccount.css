@@ -1,3 +1,7 @@
+:root {
+    height: 100%;
+}
+
 #accountCreationDiv {
     height: 800px;
     padding: 0px;
@@ -5,18 +9,18 @@
 
 #googleAuthDiv2 {
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     background-color: #333333;
     position: relative;
     left: 35%;
     width: 30%;
     height: 420px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
 #accountCreationHeader {
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -31,7 +35,7 @@
     border: 2px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -46,7 +50,7 @@
     border: 2px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -61,7 +65,7 @@
     border: 2px solid black;
     border-radius: 12.5px;
     font-size: 19px;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 }
 
@@ -72,20 +76,16 @@
     height: 45px;
     border-radius: 20px;
     background-color: #4AD388;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
-    color: 'white';
+    color: black;
+}
+
+#buttonIn:hover {
+    background-color: #2ebf6f;
 }
 
 #buttonIn:active {
-    position: relative;
-    top: 20px;
-    width: 270px;
-    height: 45px;
-    border-radius: 20px;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 19px;
-    background-color: #2a8460;
-    color: 'white';
+    background-color: #008FFF;
+    color: white;
 }

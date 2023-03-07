@@ -9,7 +9,7 @@ export default function Legal() {
             <div 
                 className='attribution'
                 style={{
-                    height: 1600,
+                    height: 1700,
                     width: '100%',
                     position: 'relative',
                     top: 150,
@@ -114,7 +114,9 @@ export default function Legal() {
                         position: 'relative',
                         width: '90%',
                         left: '2.5%',
-                        top: 75
+                        top: 75,
+                        textDecoration: 'none', 
+                        color:'black'
                     }}
                 >
                     Paper icons created by Icongeek26 - Flaticon<br/>
@@ -124,11 +126,35 @@ export default function Legal() {
                         position: 'relative',
                         width: '90%',
                         left: '2.5%',
-                        top: 75
+                        top: 83,
+                        textDecoration: 'none',
+                        color:'black'
                     }}
                 >
                     Cpu icons created by Icongeek26 - Flaticon
                 </a>
+                <p
+                    style={{
+                        position: 'relative',
+                        width: '90%',
+                        left: '2.5%',
+                        top: 75,
+                    }}
+                >
+                    Arrow Right by Danil Polshin from 
+                    <a href="https://thenounproject.com/browse/icons/term/arrow-right/" target="_blank" title="Arrow Right Icons" style={{textDecoration: 'none', color:'black'}}> Noun Project</a>
+                </p>
+                <p
+                    style={{
+                        position: 'relative',
+                        width: '90%',
+                        left: '2.5%',
+                        top: 68,
+                    }}
+                >
+                    Home by Enjang Solehudin from 
+                    <a href="https://thenounproject.com/browse/icons/term/home/" target="_blank" title="Home Icons" style={{textDecoration: 'none', color:'black'}}>Noun Project</a>
+                </p>
             </div>
             <div
                 className='infoSection'

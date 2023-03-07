@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './SignIn.css';
 import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-import { Navigate, Link, Outlet, useNavigate } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 import { auth, db } from '../auth/firebase.js';
 import { useState, useCallback } from 'react';
 import BottomLinks from './BottomLinks';
 import { getDoc, doc } from 'firebase/firestore';
+import { SwitchLink } from './StyledLink';
 
 export default function SignIn() {
     const [email, setEmail] = useState("");
@@ -84,12 +85,14 @@ export default function SignIn() {
                             id='pass'
                             onChange={handlePass}
                         />
-                        <button 
-                            id='buttonIn'
-                            onClick={() => signIn(email, pass)}
-                        >
-                            Sign In
-                        </button>
+                        <div>
+                            <button 
+                                id='buttonIn'
+                                onClick={() => signIn(email, pass)}
+                            >
+                                Sign In
+                            </button>
+                        </div>
                     </div>
                     <div
                         style={{
@@ -97,27 +100,25 @@ export default function SignIn() {
                             textAlign: 'center',
                         }}
                     >
-                        <Link
+                        <SwitchLink
                             id='buttonUp'
                             to="/createAccount"
                             style={{
                                 position: 'relative',
-                                top: 25,
-                                textDecoration: 'none',
-                                fontFamily: 'Inter',
+                                top: 25
                             }}
                         >
                             Create Account
-                        </Link>
+                        </SwitchLink>
                     </div>
                     <div
                         className='infoSection'
                         style={{
-                            width: '103%',
+                            width: '102%',
                             height: 250,
-                            position: 'relative',
-                            top: 100,
-                            left: "-1.5%",
+                            position: 'absolute',
+                            bottom: 0,
+                            left: "-1%",
                             margin: 0,
                             color: 'white',
                             backgroundColor: '#1F1F1F'

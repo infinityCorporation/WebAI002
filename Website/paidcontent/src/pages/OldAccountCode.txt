@@ -226,3 +226,19 @@ const [state, dispatch] = useReducer(
                 console.log({ message: err.message });
             });
     };
+
+
+<li>
+    <SideLink
+        to='/customerPortal/formulaBank'
+        className='formBank'
+    >
+        <h3 className='formBankTitle'
+            style={{
+                fontFamily: 'Helvetica, Arial, sans-serif',
+            }}
+        >
+            Formula Bank
+        </h3>
+    </SideLink>
+</li>

@@ -3,7 +3,7 @@ import './CancelPage.css';
 
 export default function CancelPage() {
   return (
-    <div>
+    <div className='main'>
         This is the Subscription Cancel Page
     </div>
   )

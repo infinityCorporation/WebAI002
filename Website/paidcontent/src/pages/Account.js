@@ -41,7 +41,7 @@ export default function Account() {
     });
 
     const upgradeFunction = useCallback( async () => {
-        navigate('/products');
+        navigate('/customerPortal/pricing');
     })
 
     const cancelFunction = useCallback( async () => {
@@ -76,19 +76,19 @@ export default function Account() {
                                 </h4>
                             </div>
                             <button 
-                                className='signOut'
+                                id='signOut'
                                 onClick={() => signOutFunction()}
                             >
                                 Sign Out
                             </button>
                             <button
-                                className='upgrade'
+                                id='upgrade'
                                 onClick={() => upgradeFunction()}
                             >
                                 Upgrade
                             </button>
                             <button
-                                className='cancelSubscription'
+                                id='cancelSubscription'
                                 onClick={() => cancelFunction()}
                             >
                                 Cancel Subscription

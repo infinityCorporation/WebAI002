@@ -1,37 +1,8 @@
 import * as React from 'react';
 import './PricingComp.css'
 import { Outlet, Link } from 'react-router-dom';
-import { db } from '../auth/firebase';
-import { useEffect } from 'react';
-import { collection, query, where, getDocs } from 'firebase/firestore';
 
 export default function PricingComponent() {
-
-
-    const q = query(collection(db, 'products'), where ('active', '==', true));
-
-    const getProducts = async () => {
-        let products;
-
-        await getDocs(q)
-            .then((doc) => {
-                products = doc.docs;
-                console.log(products);
-                return products;
-            })
-            .catch((err) => {
-                console.log({ message: err.message });
-            });
-
-        products.forEach((doc) => {
-            console.log(doc._document.data.value.mapValue.fields.description);
-        })
-    };
-
-    useEffect(() => {
-        getProducts()
-    }, []);
-
 
     return(
         <div 

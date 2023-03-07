@@ -148,18 +148,7 @@ function displayProduct(name, des1, des2, des3, des4, price, link, avail) {
                             Monthly
                         </h5>
                         <button 
-                            style={{
-                                border: 'none',
-                                color: 'white',
-                                background: '#4ad388',
-                                borderRadius: 15,
-                                width: 185,
-                                height: 60,
-                                fontFamily: 'Inter',
-                                fontSize: 25,
-                                position: 'relative',
-                                top: 70
-                            }}
+                            id="prodPurchase"
                             onClick={() => {
                                 setRe(true)
                             }}

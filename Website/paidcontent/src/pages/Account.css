@@ -156,80 +156,68 @@
     left: 5%;
 }
 
-.signOut {
+#signOut {
     position: relative;
     top: 40px;
     width: 270px;
     height: 45px;
     border-radius: 20px;
-    border: 3px solid black;
+    border: none;
     background-color: #4AD388;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
     margin-left: 10px;
 }
 
-.signOut:active {
+#signOut:hover {
+    background-color: #2ebf6f;
+}
+
+#signOut:active {
+    background-color: #008FFF;
+    color: white;
+}
+
+#upgrade {
     position: relative;
     top: 40px;
     width: 270px;
     height: 45px;
     border-radius: 20px;
-    border: 3px solid black;
-    background-color: #2a8460;
-    font-family: 'Inter';
-    font-size: 18px;
-    margin-left: 10px;
-}
-
-.upgrade {
-    position: relative;
-    top: 40px;
-    width: 270px;
-    height: 45px;
-    border-radius: 20px;
-    border: 3px solid black;
+    border: none;
     background-color: #4AD388;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
     margin-left: 10px;
 }
 
-.upgrade:active {
+#upgrade:hover {
+    background-color: #2ebf6f;
+}
+
+#upgrade:active {
+    background-color: #008FFF;
+    color: white;
+}
+
+#cancelSubscription {
     position: relative;
     top: 40px;
     width: 270px;
     height: 45px;
     border-radius: 20px;
-    border: 3px solid black;
-    background-color: #2a8460;
-    font-family: 'Inter';
-    font-size: 18px;
-    margin-left: 10px;
-}
-
-.cancelSubscription {
-    position: relative;
-    top: 40px;
-    width: 270px;
-    height: 45px;
-    border-radius: 20px;
-    border: 3px solid black;
+    border: none;
     background-color: #4AD388;
-    font-family: 'Inter';
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
     margin-left: 10px;
 }
 
-.cancelSubscription:active {
-    position: relative;
-    top: 40px;
-    width: 270px;
-    height: 45px;
-    border-radius: 20px;
-    border: 3px solid black;
-    background-color: #2a8460;
-    font-family: 'Inter';
-    font-size: 18px;
-    margin-left: 10px;
+#cancelSubscription:hover {
+    background-color: #2ebf6f;
+}
+
+#cancelSubscription:active {
+    background-color: #008FFF;
+    color: white;
 }

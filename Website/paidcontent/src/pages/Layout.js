@@ -5,6 +5,8 @@ import { SideLink } from './ListLink';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../auth/firebase';
+import Home from './Icons/home.png';
+import Profile from './Icons/profile.png';
 
 export default function Layout() {
 
@@ -33,13 +35,14 @@ export default function Layout() {
                                 to="/customerPortal/"
                                 className='home'
                             >
-                                <h3 className='homeTitle'
+                                <img src={Home} alt="icon" height="30" width="30" style={{ position: 'relative', top: 19, marginRight: 10}}/>
+                                <h2 className='homeTitle'
                                     style={{
                                         fontFamily: 'Helvetica, Arial, sans-serif',
                                     }}
                                 >
                                     Home
-                                </h3>
+                                </h2>
                             </SideLink>
                         </li>
                         <h2 className='formSection'
@@ -78,17 +81,17 @@ export default function Layout() {
                             </SideLink>
                         </li>
                         <li>
-                            <SideLink
-                                to='/customerPortal/formulaBank'
-                                className='formBank'
+                            <SideLink 
+                                to="/customerPortal/inDev"
+                                className='formExp'
                             >
-                                <h3 className='formBankTitle'
-                                    style={{
-                                        fontFamily: 'Helvetica, Arial, sans-serif',
-                                    }}
-                                >
-                                    Formula Bank
-                                </h3>
+                                    <h3 className='formExpTitle'
+                                        style={{
+                                            fontFamily: 'Helvetica, Arial, sans-serif',
+                                        }}
+                                    >
+                                        Bank
+                                    </h3>
                             </SideLink>
                         </li>
                         <h2 className='textSection'
@@ -100,7 +103,7 @@ export default function Layout() {
                         </h2>
                         <li>
                             <SideLink 
-                                to="/customerPortal/formulaGen"
+                                to="/customerPortal/inDev"
                                 className='formGen'
                             >
                                     <h3 className='formGenTitle'
@@ -114,7 +117,7 @@ export default function Layout() {
                         </li>
                         <li>
                             <SideLink 
-                                to="/customerPortal/formulaExp"
+                                to="/customerPortal/inDev"
                                 className='formExp'
                             >
                                     <h3 className='formExpTitle'
@@ -128,7 +131,7 @@ export default function Layout() {
                         </li>
                         <li>
                             <SideLink
-                                to='/customerPortal/formulaBank'
+                                to='/customerPortal/inDev'
                                 className='formBank'
                             >
                                 <h3 className='formBankTitle'
@@ -149,7 +152,7 @@ export default function Layout() {
                         </h2>
                         <li>
                             <SideLink
-                                to='/customerPortal/formulaBank'
+                                to='/customerPortal/inDev'
                                 className='formBank'
                             >
                                 <h3 className='formBankTitle'
@@ -163,7 +166,7 @@ export default function Layout() {
                         </li>
                         <li>
                             <SideLink
-                                to='/customerPortal/formulaBank'
+                                to='/customerPortal/inDev'
                                 className='formBank'
                             >
                                 <h3 className='formBankTitle'
@@ -177,7 +180,7 @@ export default function Layout() {
                         </li>
                         <li>
                             <SideLink
-                                to='/customerPortal/formulaBank'
+                                to='/customerPortal/inDev'
                                 className='formBank'
                             >
                                 <h3 className='formBankTitle'
@@ -266,6 +269,7 @@ export default function Layout() {
                         to="/customerPortal/account"
                         className='account'
                     >
+                        <img src={Profile} alt="icon" height="30" width="30" style={{ position: 'relative', top: 24, left: 5}}/>
                         <h3 className='username'
                             style={{
                                 fontFamily: 'Helvetica, Arial, sans-serif',

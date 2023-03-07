@@ -6,7 +6,8 @@ import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/aut
 import { auth, db } from '../auth/firebase.js';
 import BottomLinks from './BottomLinks';
 import { Navigate } from 'react-router-dom';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { SwitchLink } from './StyledLink';
 import axios from 'axios';
 
 export default function CreateAccount() {
@@ -102,14 +103,16 @@ export default function CreateAccount() {
                                 id='pass'
                                 onChange={createPass}
                             />
-                            <button 
-                                id='buttonIn'
-                                onClick={() => {
-                                    signUp(emailCreate, passCreate, name);
-                                }}
-                            >
-                                Create Account
-                            </button>
+                            <div>
+                                <button 
+                                    id='buttonIn'
+                                    onClick={() => {
+                                        signUp(emailCreate, passCreate, name);
+                                    }}
+                                >
+                                    Create Account
+                                </button>
+                            </div>
                         </div>
                         <div
                             style={{
@@ -117,18 +120,16 @@ export default function CreateAccount() {
                                 textAlign: 'center',
                             }}
                         >
-                            <Link
+                            <SwitchLink
                                 id="toSignIn"
                                 to="/signIn"
                                 style={{
                                     position: 'relative',
                                     top: 25,
-                                    textDecoration: 'none',
-                                    fontFamily: 'Inter',
                                 }}
                             >
                                 Sign In
-                            </Link>
+                            </SwitchLink>
                         </div>
                         <div
                             className='infoSection'

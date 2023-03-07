@@ -6,7 +6,7 @@ export default function BottomLinks() {
     return(
         <div
             style={{
-                height: 250,
+                height: 220,
                 width: '100%',
             }}
         >
@@ -19,7 +19,7 @@ export default function BottomLinks() {
                     fontWeight: 200,
                     position: 'relative',
                     left: 40,
-                    top: 50
+                    top: 30
                 }}
             >
                 Information:
@@ -28,7 +28,7 @@ export default function BottomLinks() {
                 to="/features"
                 style={{
                     position: 'relative',
-                    top: 50,
+                    top: 30,
                     left: 55
                 }}
             >
@@ -38,7 +38,7 @@ export default function BottomLinks() {
                 to="/pricing"
                 style={{
                     position: 'relative',
-                    top: 60,
+                    top: 40,
                     left: 55
                 }}
             >
@@ -48,7 +48,7 @@ export default function BottomLinks() {
                 to="/about"
                 style={{
                     position: 'relative',
-                    top: 70,
+                    top: 50,
                     left: 55
                 }}
             >
@@ -58,7 +58,7 @@ export default function BottomLinks() {
                 to="/legal"
                 style={{
                     position: 'relative',
-                    top: 80,
+                    top: 60,
                     left: 55
                 }}
             >

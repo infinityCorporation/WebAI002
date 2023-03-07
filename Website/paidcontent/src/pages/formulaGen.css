@@ -58,6 +58,10 @@
   font-size: 19px;
 }
 
+.excelButton:hover {
+  background-color: rgb(236, 234, 234);
+}
+
 .sheetsButton {
   width: 125px;
   height: 50px;
@@ -70,6 +74,10 @@
   font-family: 'Inter';
   font-size: 19px;
   margin-left: 5px;
+}
+
+.sheetsButton:hover {
+  background-color: rgb(236, 234, 234);
 }
 
 .inputSection {
@@ -111,17 +119,12 @@
   top: -10px;
 }
 
+.submitButton:hover {
+  background-color: rgb(236, 234, 234);
+}
+
 .submitButton:active {
-  width: 300px;
-  height: 40px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: black;
-  background-color: #D6D6D6;
-  font-family: 'Inter';
-  font-size: 18px;
-  position: relative;
-  top: -10px;
+  background-color: #c1bfbf;
 }
 
 .outputSection {
@@ -159,15 +162,10 @@
   top: -10px;
 }
 
+#copyButton:hover {
+  background-color: rgb(236, 234, 234);
+}
+
 #copyButton:active {
-  width: 300px;
-  height: 40px;
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: black;
-  background-color: #D6D6D6;
-  font-family: 'Inter';
-  font-size: 18px;
-  position: relative;
-  top: -10px;
+  background-color: #c1bfbf;
 }
