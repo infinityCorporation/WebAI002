@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useState, useCallback, useReducer } from 'react';
+import { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Gen() {
     const [request, setRequest] = useState();
@@ -60,6 +61,11 @@ export default function Gen() {
     
     return(
         <div className='container'>
+            <Link to="/">
+                <h3>
+                    Home
+                </h3>
+            </Link>
             <div className="main">
                 <div className="headDiv">
                     <h3 className="title">

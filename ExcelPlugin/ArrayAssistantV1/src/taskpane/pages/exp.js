@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useCallback } from 'react';
 import './exp.css';
+import { Link } from 'react-router-dom';
 
 export default function Exp() {
     const [type, setType] = useState("none");
@@ -75,6 +76,11 @@ export default function Exp() {
 
     return(
         <div className='expMain'>
+            <Link to="/">
+                <h3>
+                    Home
+                </h3>
+            </Link>
             <div className='expInputStart'>
                 <h3 className='expTitle'>
                     Explainer

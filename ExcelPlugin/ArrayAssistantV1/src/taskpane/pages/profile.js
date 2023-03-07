@@ -1,9 +1,15 @@
 import * as React from 'react';
 import './profile.css';
+import { Link } from 'react-router-dom';
 
-export default function Profile() {
+export default function ProfileTab() {
     return(
         <div className='profileDiv'>
+            <Link to="/">
+                <h3>
+                    Home
+                </h3>
+            </Link>
             <h3 className='profileTitle'>
                 Profile Information
             </h3>
