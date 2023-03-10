@@ -49,7 +49,7 @@ export default function Sum() {
 
     const changeVal = () => {
         try {
-            Excel.try(async (context) => {
+            Excel.run(async (context) => {
                 const range = context.workbook.getSelectedRange();
 
                 range.load("values");

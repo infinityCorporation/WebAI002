@@ -5,8 +5,17 @@ import { SideLink } from './ListLink';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../auth/firebase';
+
 import Home from './Icons/home.png';
 import Profile from './Icons/profile.png';
+import Formula from './Icons/formula.png';
+import Explain from './Icons/text.png';
+import Settings from './Icons/settings.png';
+import Translate from './Icons/translate.png';
+import Text from './Icons/Text2.png';
+import Summary from './Icons/summary.png';
+import Grammar from './Icons/grammar.png';
+import Solved from './Icons/solve.png';
 
 export default function Layout() {
 
@@ -57,13 +66,14 @@ export default function Layout() {
                                 to="/customerPortal/formulaGen"
                                 className='formGen'
                             >
-                                    <h3 className='formGenTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                        Formula Generator
-                                    </h3>
+                                <img src={Formula} alt="icon" height="22" width="22" style={{ position: 'relative', top: 19, marginRight: 10}}/>
+                                <h3 className='formGenTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Formula Generator
+                                </h3>
                             </SideLink>
                         </li>
                         <li>
@@ -71,27 +81,14 @@ export default function Layout() {
                                 to="/customerPortal/formulaExp"
                                 className='formExp'
                             >
-                                    <h3 className='formExpTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                        Formula Explainer
-                                    </h3>
-                            </SideLink>
-                        </li>
-                        <li>
-                            <SideLink 
-                                to="/customerPortal/inDev"
-                                className='formExp'
-                            >
-                                    <h3 className='formExpTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                        Bank
-                                    </h3>
+                                <img src={Explain} alt="icon" height="25" width="25" style={{ position: 'relative', top: 19, marginRight: 7}}/>
+                                <h3 className='formExpTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Formula Explainer
+                                </h3>
                             </SideLink>
                         </li>
                         <h2 className='textSection'
@@ -106,13 +103,14 @@ export default function Layout() {
                                 to="/customerPortal/inDev"
                                 className='formGen'
                             >
-                                    <h3 className='formGenTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                        Generate Text
-                                    </h3>
+                                <img src={Text} alt="icon" height="32" width="32" style={{ position: 'relative', top: 19, marginRight: 0}}/>
+                                <h3 className='formGenTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Generate Text
+                                </h3>
                             </SideLink>
                         </li>
                         <li>
@@ -120,13 +118,14 @@ export default function Layout() {
                                 to="/customerPortal/inDev"
                                 className='formExp'
                             >
-                                    <h3 className='formExpTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                       Summarize Text
-                                    </h3>
+                                <img src={Summary} alt="icon" height="30" width="30" style={{ position: 'relative', top: 19, marginRight: 2}}/>
+                                <h3 className='formExpTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Summarize Text
+                                </h3>
                             </SideLink>
                         </li>
                         <li>
@@ -134,13 +133,14 @@ export default function Layout() {
                                 to="/customerPortal/inDev"
                                 className='formExp'
                             >
-                                    <h3 className='formExpTitle'
-                                        style={{
-                                            fontFamily: 'Helvetica, Arial, sans-serif',
-                                        }}
-                                    >
-                                       Grammer Checker
-                                    </h3>
+                                <img src={Grammar} alt="icon" height="27" width="27" style={{ position: 'relative', top: 19, marginRight: 5}}/>
+                                <h3 className='formExpTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Grammer Checker
+                                </h3>
                             </SideLink>
                         </li>
                         <li>
@@ -148,12 +148,13 @@ export default function Layout() {
                                 to="/customerPortal/inDev"
                                 className='formExp'
                             >
+                                    <img src={Translate} alt="icon" height="30" width="30" style={{ position: 'relative', top: 19, marginRight: 2}}/>
                                     <h3 className='formExpTitle'
                                         style={{
                                             fontFamily: 'Helvetica, Arial, sans-serif',
                                         }}
                                     >
-                                       Text Tense Changer
+                                       Translate
                                     </h3>
                             </SideLink>
                         </li>
@@ -162,6 +163,7 @@ export default function Layout() {
                                 to='/customerPortal/inDev'
                                 className='formBank'
                             >
+                                <img src={Solved} alt="icon" height="27" width="27" style={{ position: 'relative', top: 15, marginRight: 5}}/>
                                 <h3 className='formBankTitle'
                                     style={{
                                         fontFamily: 'Helvetica, Arial, sans-serif',
@@ -281,12 +283,28 @@ export default function Layout() {
                                 to="/customerPortal/docs"
                                 className='docs'
                             >
+                                <img src={Summary} alt="icon" height="30" width="30" style={{ position: 'relative', top: 19, marginRight: 2}}/>
                                 <h3 className='docsTitle'
                                     style={{
                                         fontFamily: 'Helvetica, Arial, sans-serif',
                                     }}
                                 >
                                     Docs
+                                </h3>
+                            </SideLink>
+                        </li>
+                        <li>
+                            <SideLink 
+                                to="/customerPortal/inDev"
+                                className='docs'
+                            >
+                                <img src={Settings} alt="icon" height="35" width="35" style={{ position: 'relative', top: 15, marginRight: -3}}/>
+                                <h3 className='docsTitle'
+                                    style={{
+                                        fontFamily: 'Helvetica, Arial, sans-serif',
+                                    }}
+                                >
+                                    Settings
                                 </h3>
                             </SideLink>
                         </li>
@@ -315,3 +333,22 @@ export default function Layout() {
         </>
     )
 };
+
+
+
+/*
+<li>
+    <SideLink 
+        to="/customerPortal/inDev"
+        className='formExp'
+    >
+        <h3 className='formExpTitle'
+            style={{
+                fontFamily: 'Helvetica, Arial, sans-serif',
+            }}
+        >
+            Bank
+        </h3>
+    </SideLink>
+</li>
+*/

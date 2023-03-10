@@ -39,7 +39,7 @@ export default function Gram() {
             input: request.input
         })
             .then((response) => {
-                setDataSum(response.data);
+                setDataGram(response.data);
                 setReady(true);
             })
             .catch((err) => {
@@ -49,13 +49,13 @@ export default function Gram() {
 
     const changeVal = () => {
         try {
-            Excel.try(async (context) => {
+            Excel.run(async (context) => {
                 const range = context.workbook.getSelectedRange();
 
                 range.load("values");
 
-                if (dataSum) {
-                    range.values = dataSum.choices[0].text;
+                if (dataGram) {
+                    range.values = dataGram.choices[0].text;
                 } else {
                     range.values = "Please submit an input";
                 };

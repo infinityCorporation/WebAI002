@@ -63,17 +63,17 @@ export default function Gen() {
                     Home
                 </h3>
             </Link>
-            <div className="main">
+            <div className="mainGen"> 
                 <div className="headDiv">
-                    <h3 className="title">
-                        Array Assistant
-                    </h3>
+                    <h2 id="title">
+                        Formula Generator
+                    </h2>
                 </div>
                 <div className="bodyDiv">
                     <div className="inputDiv">
-                        <h5 className="inputTitle">
+                        <h4 className="inputTitle">
                         What should your formula do?
-                        </h5>
+                        </h4>
                         <textarea 
                             type='text' 
                             className="input" 
