@@ -130,6 +130,34 @@ export default function Layout() {
                             </SideLink>
                         </li>
                         <li>
+                            <SideLink 
+                                to="/customerPortal/inDev"
+                                className='formExp'
+                            >
+                                    <h3 className='formExpTitle'
+                                        style={{
+                                            fontFamily: 'Helvetica, Arial, sans-serif',
+                                        }}
+                                    >
+                                       Grammer Checker
+                                    </h3>
+                            </SideLink>
+                        </li>
+                        <li>
+                            <SideLink 
+                                to="/customerPortal/inDev"
+                                className='formExp'
+                            >
+                                    <h3 className='formExpTitle'
+                                        style={{
+                                            fontFamily: 'Helvetica, Arial, sans-serif',
+                                        }}
+                                    >
+                                       Text Tense Changer
+                                    </h3>
+                            </SideLink>
+                        </li>
+                        <li>
                             <SideLink
                                 to='/customerPortal/inDev'
                                 className='formBank'

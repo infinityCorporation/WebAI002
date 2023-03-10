@@ -9,9 +9,10 @@ import Layout from "../pages/Layout.js";
 import ProfileTab from "../pages/profile.js";
 import Clean from "../pages/clean.js";
 import Sum from "../pages/Sum";
+import Gram from "../pages/Gram";
 import Random from "../pages/Random";
+import GenText from "../pages/GenText";
 import Ext from "../pages/Ext.js";
-import TComp from '../pages/TComp.js';
 import Class from "../pages/Class";
 import Trans from '../pages/Trans.js';
 import Help from '../pages/Help.js';
@@ -50,17 +51,20 @@ export default class App extends React.Component {
               <Route path="/sum">
                 <Sum />
               </Route>
+              <Route path="/gram">
+                <Gram />
+              </Route>
               <Route path="/rand">
                 <Random />
+              </Route>
+              <Route path="/textGen">
+                <GenText />
               </Route>
               <Route path="/ext">
                 <Ext />
               </Route>
               <Route path="/class">
                 <Class />
-              </Route>
-              <Route path="/tcomp">
-                <TComp />
               </Route>
               <Route path="/trans">
                 <Trans />

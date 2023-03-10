@@ -35,6 +35,13 @@ export default function Layout() {
                 </h2>
             </FrontButton>
             <FrontButton
+                to="/textgen"
+            >
+                <h2>
+                    Text Composer
+                </h2>
+            </FrontButton>
+            <FrontButton
                 to="/sum"
             >
                 <h2>
@@ -42,17 +49,17 @@ export default function Layout() {
                 </h2>
             </FrontButton>
             <FrontButton
+                to='/gram'
+            >
+                <h2>
+                    Grammar Checker
+                </h2>
+            </FrontButton>
+            <FrontButton
                 to="/rand"
             >
                 <h2>
                     Generate Data
-                </h2>
-            </FrontButton>
-            <FrontButton
-                to="/tcomp"
-            >
-                <h2>
-                    Text Composer
                 </h2>
             </FrontButton>
             <FrontButton

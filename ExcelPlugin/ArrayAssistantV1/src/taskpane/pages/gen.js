@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Gen() {
     const [request, setRequest] = useState();
@@ -16,22 +17,18 @@ export default function Gen() {
     });
     
     const fetchRequest = useCallback( async () => {
-        await fetch("https://aiserver.herokuapp.com/dev_aigen", {
-            method: 'POST',
-            headers: {
-            'Content-type': 'application/json'
-            },
-            body: JSON.stringify(request)
+        await axios.post("https://aiserver.herokuapp.com/dev_aigen", {
+            type: request.type,
+            input: request.input
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setDataGen(data);
+            .then((response) => {
+                console.log(response);
+                setDataGen(response.data);
                 setReady(true);
             })
             .catch((err) => {
-            console.log({ message: err.message });
-            })
+                console.log({ message: err.message });
+            });
     });
 
     
